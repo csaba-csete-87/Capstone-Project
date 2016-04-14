@@ -62,7 +62,8 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
     @Override
     public void showPost(Post post) {
-        setPostTitle(post.getTitle());
+        PostDetailsAdapter adapter = new PostDetailsAdapter();
+        binding.postDetails.setAdapter(adapter);
     }
 
     @Override
@@ -70,7 +71,4 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         binding.notFound.setVisibility(View.VISIBLE);
     }
 
-    private void setPostTitle(String title) {
-        binding.postTitle.setText(title);
-    }
 }
