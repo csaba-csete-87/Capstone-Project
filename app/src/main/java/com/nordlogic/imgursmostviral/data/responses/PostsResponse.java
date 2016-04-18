@@ -10,7 +10,7 @@ import java.util.List;
 public class PostsResponse {
     private List<Post> data;
 
-    public List<Post> getData() {
+    public List<Post> getPosts() {
         return data;
     }
 

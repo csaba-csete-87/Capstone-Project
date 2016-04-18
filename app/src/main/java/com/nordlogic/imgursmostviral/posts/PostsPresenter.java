@@ -13,7 +13,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * Created by csaba.csete on 2016-02-24.
  */
-public class PostsPresenter implements PostsContract.UserActionsListener, PostsRepository.LoadPostsCallback {
+public class PostsPresenter implements PostsContract.UserActionsListener, PostsRepository.GetPostsCallback {
 
     private final PostsRepository mPostsRepository;
     private final PostsContract.View mPostsView;

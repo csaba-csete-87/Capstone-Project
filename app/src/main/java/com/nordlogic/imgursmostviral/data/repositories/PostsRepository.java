@@ -2,6 +2,7 @@ package com.nordlogic.imgursmostviral.data.repositories;
 
 import android.support.annotation.NonNull;
 
+import com.nordlogic.imgursmostviral.data.models.Comment;
 import com.nordlogic.imgursmostviral.data.models.Post;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public interface PostsRepository {
 
-    interface LoadPostsCallback {
+    interface GetPostsCallback {
 
         void onPostsLoaded(List<Post> posts);
     }
@@ -21,9 +22,15 @@ public interface PostsRepository {
         void onPostLoaded(Post post);
     }
 
-    void getPosts(@NonNull LoadPostsCallback callback);
+    interface GetCommentsCallback {
+        void onCommentsLoaded(List<Comment> comments);
+    }
 
     void refreshData();
 
+    void getPosts(@NonNull GetPostsCallback callback);
+
     void getPost(@NonNull String postId, @NonNull GetPostCallback callback);
+
+    void getComments(@NonNull String postId, @NonNull GetCommentsCallback callback);
 }

@@ -4,6 +4,7 @@ package com.nordlogic.imgursmostviral.postdetail;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_post_detail, container, false);
-
+        setupToolbar();
         return binding.getRoot();
     }
 
@@ -62,7 +63,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
     @Override
     public void showPost(Post post) {
-        PostDetailsAdapter adapter = new PostDetailsAdapter();
+        PostDetailsAdapter adapter = new PostDetailsAdapter(post);
         binding.postDetails.setAdapter(adapter);
     }
 
@@ -71,4 +72,12 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         binding.notFound.setVisibility(View.VISIBLE);
     }
 
+
+    private void setupToolbar() {
+        PostDetailActivity activity = ((PostDetailActivity) getActivity());
+        activity.setSupportActionBar(binding.toolbar);
+        ActionBar actionBar = activity.getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+    }
 }

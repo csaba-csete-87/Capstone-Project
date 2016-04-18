@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.nordlogic.imgursmostviral.data.api.PostsServiceApi;
 import com.nordlogic.imgursmostviral.data.models.Post;
+import com.nordlogic.imgursmostviral.data.responses.CommentsResponse;
 import com.nordlogic.imgursmostviral.data.responses.PostResponse;
 import com.nordlogic.imgursmostviral.data.responses.PostsResponse;
 
@@ -37,7 +38,7 @@ public class PostsRepositoryImpl implements PostsRepository {
     }
 
     @Override
-    public void getPosts(@NonNull final LoadPostsCallback callback) {
+    public void getPosts(@NonNull final GetPostsCallback callback) {
         checkNotNull(callback);
         // Load from API only if needed.
         if (mCachedPosts == null) {
@@ -46,7 +47,7 @@ public class PostsRepositoryImpl implements PostsRepository {
                 @Override
                 public void onResponse(Call<PostsResponse> call, Response<PostsResponse> response) {
                     if (response.isSuccess()) {
-                        callback.onPostsLoaded(response.body().getData());
+                        callback.onPostsLoaded(response.body().getPosts());
                     } else {
                         Log.e("getPosts", response.raw().message());
                         callback.onPostsLoaded(new ArrayList<Post>());
@@ -69,16 +70,16 @@ public class PostsRepositoryImpl implements PostsRepository {
     }
 
     @Override
-    public void getPost(@NonNull String postId, @NonNull final GetPostCallback callback) {
-        checkNotNull(postId);
-        checkNotNull(callback);
+    public void getPost(@NonNull final String id, @NonNull final GetPostCallback getPostCallback) {
+        final String postId = checkNotNull(id);
+        final GetPostCallback callback = checkNotNull(getPostCallback);
 
         Call<PostResponse> getPostCall = mPostsServiceApi.getPostById(postId);
         getPostCall.enqueue(new Callback<PostResponse>() {
             @Override
             public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
                 if (response.isSuccess()) {
-                    callback.onPostLoaded(response.body().getData());
+                    callback.onPostLoaded(response.body().getPost());
                 } else {
                     Log.e("getPosts", response.raw().message());
                     callback.onPostLoaded(null);
@@ -87,6 +88,30 @@ public class PostsRepositoryImpl implements PostsRepository {
 
             @Override
             public void onFailure(Call<PostResponse> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void getComments(@NonNull final String id, final GetCommentsCallback getCommentsCallback) {
+        final String postId = checkNotNull(id);
+        final GetCommentsCallback callback = checkNotNull(getCommentsCallback);
+
+        Call<CommentsResponse> getCommentsCall = mPostsServiceApi.getCommentsByPostId(postId);
+        getCommentsCall.enqueue(new Callback<CommentsResponse>() {
+            @Override
+            public void onResponse(Call<CommentsResponse> call, Response<CommentsResponse> response) {
+                if (response.isSuccess()) {
+                    callback.onCommentsLoaded(response.body().getComments());
+                } else {
+                    Log.e("getComments", response.raw().message());
+                    callback.onCommentsLoaded(null);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CommentsResponse> call, Throwable t) {
                 t.printStackTrace();
             }
         });

@@ -1,5 +1,6 @@
 package com.nordlogic.imgursmostviral.data.api;
 
+import com.nordlogic.imgursmostviral.data.responses.CommentsResponse;
 import com.nordlogic.imgursmostviral.data.responses.PostResponse;
 import com.nordlogic.imgursmostviral.data.responses.PostsResponse;
 
@@ -34,5 +35,10 @@ public class PostsServiceApiImpl implements PostsServiceApi {
     @Override
     public Call<PostResponse> getPostById(@Path("id") String postId) {
         return postsServiceApi.getPostById(postId);
+    }
+
+    @Override
+    public Call<CommentsResponse> getCommentsByPostId(@Path("id") String postId) {
+        return postsServiceApi.getCommentsByPostId(postId);
     }
 }

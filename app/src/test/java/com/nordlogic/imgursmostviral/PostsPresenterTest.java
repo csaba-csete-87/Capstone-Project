@@ -3,7 +3,7 @@ package com.nordlogic.imgursmostviral;
 import com.google.common.collect.Lists;
 import com.nordlogic.imgursmostviral.data.models.Post;
 import com.nordlogic.imgursmostviral.data.repositories.PostsRepository;
-import com.nordlogic.imgursmostviral.data.repositories.PostsRepository.LoadPostsCallback;
+import com.nordlogic.imgursmostviral.data.repositories.PostsRepository.GetPostsCallback;
 import com.nordlogic.imgursmostviral.posts.PostsContract;
 import com.nordlogic.imgursmostviral.posts.PostsPresenter;
 
@@ -35,7 +35,7 @@ public class PostsPresenterTest {
     private PostsContract.View mPostsView;
 
     @Captor
-    private ArgumentCaptor<LoadPostsCallback> mLoadPostsCallbackCaptor;
+    private ArgumentCaptor<GetPostsCallback> mLoadPostsCallbackCaptor;
 
     @Before
     public void setupPostsPresenter() {

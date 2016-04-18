@@ -9,7 +9,7 @@ public class PostResponse {
 
     private Post data;
 
-    public Post getData() {
+    public Post getPost() {
         return data;
     }
 }

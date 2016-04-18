@@ -2,18 +2,22 @@ package com.nordlogic.imgursmostviral.postdetail;
 
 import android.support.annotation.NonNull;
 
+import com.nordlogic.imgursmostviral.data.models.Comment;
 import com.nordlogic.imgursmostviral.data.models.Post;
 import com.nordlogic.imgursmostviral.data.repositories.PostsRepository;
 import com.nordlogic.imgursmostviral.util.EspressoIdlingResource;
+
+import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Created by csaba.csete on 2016-02-25.
  */
-public class PostDetailPresenter implements PostDetailContract.UserActionsListener, PostsRepository.GetPostCallback {
-    private final PostsRepository mPostsRepository;
-    private final PostDetailContract.View mPostDetailView;
+public class PostDetailPresenter implements PostDetailContract.UserActionsListener, PostsRepository.GetPostCallback, PostsRepository.GetCommentsCallback {
+    private final PostsRepository postsRepository;
+    private final PostDetailContract.View view;
+    private Post post;
 
     public PostDetailPresenter(
         @NonNull PostsRepository postsRepository,
@@ -21,31 +25,38 @@ public class PostDetailPresenter implements PostDetailContract.UserActionsListen
         checkNotNull(postsRepository);
         checkNotNull(postsDetailView);
 
-        mPostsRepository = postsRepository;
-        mPostDetailView = postsDetailView;
+        this.postsRepository = postsRepository;
+        view = postsDetailView;
     }
 
     @Override
     public void getPost(String postId) {
         if (null == postId || postId.isEmpty()) {
-            mPostDetailView.showPostNotFoundView();
+            view.showPostNotFoundView();
             return;
         }
-        mPostDetailView.setProgressIndicator(true);
+        view.setProgressIndicator(true);
 
         EspressoIdlingResource.increment();
-        mPostsRepository.getPost(postId, this);
+        postsRepository.getPost(postId, this);
     }
 
     @Override
     public void onPostLoaded(Post post) {
-        mPostDetailView.setProgressIndicator(false);
-
         if(post != null) {
-            mPostDetailView.showPost(post);
+            this.post = post;
+            postsRepository.getComments(post.getId(), this);
         } else {
-            mPostDetailView.showPostNotFoundView();
+            view.setProgressIndicator(false);
+            view.showPostNotFoundView();
         }
         EspressoIdlingResource.decrement();
+    }
+
+    @Override
+    public void onCommentsLoaded(List<Comment> comments) {
+        view.setProgressIndicator(false);
+        post.setComments(comments);
+        view.showPost(post);
     }
 }
