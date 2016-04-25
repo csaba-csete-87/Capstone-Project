@@ -8,15 +8,15 @@ import java.util.List;
 /**
  * Created by csaba.csete on 2016-02-24.
  */
-public class Post {
+public class Post extends Image {
 
     public static final int PAGE_COUNT = 10;
 
     private static final String COVER_TEMPLATE = "http://i.imgur.com/%sm.jpg";
+    public static final String TYPE_GIF = "image/gif";
 
-    private String id;
-    private String title;
     private String cover;
+    private int points;
     @SerializedName("images_count")
     @Expose
     private int imagesCount;
@@ -26,20 +26,15 @@ public class Post {
     @SerializedName("is_album")
     @Expose
     private boolean isAlbum;
+    @SerializedName("account_url")
+    @Expose
+    private String accountUrl;
 
     private List<Comment> comments;
+    private List<Image> images;
 
-    public Post(String id, String title) {
-        this.id = id;
-        this.title = title;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
+    public Post(String title, String description, String link, String type, long datetime) {
+        super(title, description, link, type, datetime);
     }
 
     public String getThumbnail() {
@@ -50,27 +45,39 @@ public class Post {
         return String.format(COVER_TEMPLATE, id);
     }
 
-    private String getCover() {
+    public String getCover() {
         return cover;
     }
 
-    public boolean isAlbum() {
-        return isAlbum;
-    }
-
-    public int getCommentCount() {
-        return commentCount;
+    public int getPoints() {
+        return points;
     }
 
     public int getImagesCount() {
         return imagesCount;
     }
 
-    public List<Comment> getComments() {
-        return comments;
+    public int getCommentCount() {
+        return commentCount;
+    }
+
+    public boolean isAlbum() {
+        return isAlbum;
+    }
+
+    public String getAccountUrl() {
+        return accountUrl;
     }
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public List<Image> getImages() {
+        return images;
     }
 }

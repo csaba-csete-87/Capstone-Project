@@ -3,7 +3,19 @@
     <string name="title_activity_posts">PostsActivity</string>
     <string name="title_activity_post_detail">PostDetailActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="invalid_item_type">Invalid item type</string>
+    <string name="transition_photo">sharedElementTransition</string>
+    <string name="by">By</string>
+    <string name="dummy_title">This is the dummy title of a post</string>
+    <string name="dummy_username">DummyUsername200</string>
+    <string name="dummy_points">20000 Points</string>
+    <string name="dummy_posted_when">11 Hours ago</string>
+    <string name="dummy_comment">This is a dummy comment to a post</string>
+    <string name="dummy_replies">43 replies</string>
+    <string name="dummy_points_short">3200</string>
+    <string name="dummy_posted_when_short">23h</string>
+    <string name="dummy_description">This is a dummy description for an image item that goes into a card at the bottom</string>
+    <string name="replies_singular">%d reply</string>
+    <string name="replies_plural">%d replies</string>
 </resources>

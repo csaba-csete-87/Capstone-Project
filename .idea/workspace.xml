@@ -9,7 +9,46 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98324dc-128e-406a-be20-0fbecb2531bb" name="Default" comment="" />
+    <list default="true" id="a98324dc-128e-406a-be20-0fbecb2531bb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostCommentsAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/DateTimeUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/GlideUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_expand_more.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down_gray.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_time.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_time_gray.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/transition/image_transition.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/nordlogic/imgursmostviral/NoteDetailTestScreen.java" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/nordlogic/imgursmostviral/PostDetailsScreenTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostImagesAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_album_image.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_album_image.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_post.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_post.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/integers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+    </list>
     <ignored path="TrendingOnImgur.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,54 +82,35 @@
       <file leaf-file-name="PostDetailFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostDetailsAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.2327044">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state vertical-scroll-proportion="-22.357143">
+              <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
               <folding>
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#4692#4693#0" expanded="true" />
+                <element signature="e#4742#4743#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostDetailContract.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostDetailPresenter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostDetailPresenter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.4097035">
+              <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+              <folding>
+                <element signature="e#1926#1927#0" expanded="true" />
+                <element signature="e#1953#1954#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Post.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java">
+      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
-              <folding>
-                <element signature="e#1546#1547#0" expanded="true" />
-              </folding>
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -109,36 +129,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
-              <folding>
-                <element signature="e#4196#4197#0" expanded="true" />
-                <element signature="e#4247#4248#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostsServiceApiImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/api/PostsServiceApiImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding>
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_post_detail.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5660377">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="34" />
+              <caret line="105" column="35" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -150,10 +141,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1895,28 +1891,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_posts.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsActivity.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_post.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-land/integers.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/integers.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/integers.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_image_header.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_simple_header.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_album_image.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/CommentsResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/PostResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/PostsResponse.java" />
@@ -1924,16 +1906,50 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/api/PostsServiceApiImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/item_comment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/transition/image_transition.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/GlideUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/layout_post_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_post_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_expand_more.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/DateTimeUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/nordlogic/imgursmostviral/NoteDetailTestScreen.java" />
+        <option value="$PROJECT_DIR$/app/src/androidTest/java/com/nordlogic/imgursmostviral/PostDetailsScreenTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down_grey.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_time_gray.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_time.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Image.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_album_image.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostImagesAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_post.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostCommentsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1111" />
+    <option name="x" value="1440" />
+    <option name="y" value="-905" />
+    <option name="width" value="2560" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1942,7 +1958,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -1960,9 +1976,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1970,10 +1987,6 @@
               <option name="myItemId" value="TrendingOnImgur" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1983,28 +1996,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TrendingOnImgur" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2037,6 +2028,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="imgursmostviral" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TrendingOnImgur" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imgursmostviral" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2105,61 +2118,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="responses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TrendingOnImgur" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imgursmostviral" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TrendingOnImgur" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="Nexus_5_API_23" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="DEBUGGABLE_DEVICE" value="Nexus_5_API_23 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.csabacsete.imgursmostviral" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.nordlogic.imgursmostviral.postdetail" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -2464,32 +2446,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1111" extended-state="6" />
-    <editor active="false" />
+    <frame x="1440" y="-905" width="2560" height="1417" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32858068" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964823" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4924623" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897383" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153846" sideWeight="0.48667377" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4924623" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25829145" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22736418" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997987" sideWeight="0.5133262" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5021299" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24949698" sideWeight="0.4977317" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17891374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0790938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897383" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2498,6 +2480,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -2505,339 +2495,100 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java</url>
-          <line>46</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/GlideUtils.java</url>
+          <line>17</line>
           <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostImagesAdapter.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding>
-            <element signature="e#1531#1532#0" expanded="false" />
-            <element signature="e#1573#1574#0" expanded="false" />
-            <element signature="e#3525#3526#0" expanded="false" />
-            <element signature="e#3588#3589#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4106#4107#0" expanded="false" />
-            <element signature="e#4185#4186#0" expanded="false" />
-            <element signature="e#4233#4234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="47" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="28" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1531#1532#0" expanded="false" />
-            <element signature="e#1573#1574#0" expanded="false" />
-            <element signature="e#3525#3526#0" expanded="false" />
-            <element signature="e#3588#3589#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4106#4107#0" expanded="false" />
-            <element signature="e#4185#4186#0" expanded="false" />
-            <element signature="e#4233#4234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1531#1532#0" expanded="false" />
-            <element signature="e#1573#1574#0" expanded="false" />
-            <element signature="e#3525#3526#0" expanded="false" />
-            <element signature="e#3588#3589#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4106#4107#0" expanded="false" />
-            <element signature="e#4185#4186#0" expanded="false" />
-            <element signature="e#4233#4234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_post.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#623#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_post.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1531#1532#0" expanded="false" />
-            <element signature="e#1573#1574#0" expanded="false" />
-            <element signature="e#3525#3526#0" expanded="false" />
-            <element signature="e#3588#3589#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4106#4107#0" expanded="false" />
-            <element signature="e#4185#4186#0" expanded="false" />
-            <element signature="e#4233#4234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gradle/wrapper/dists/gradle-2.8-all/ah86jmo43de9lfa8xg9ux3c4h/gradle-2.8/src/core/org/gradle/api/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3480392">
-          <caret line="232" column="12" selection-start-line="232" selection-start-column="12" selection-end-line="232" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25821596">
+        <state vertical-scroll-proportion="-0.8047619">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/Injection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11737089">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/activity_post_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24390244">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_posts.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5769231">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69816643">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_post.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22590362">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-sw600dp-land/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.043290045">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.043290045">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-land/integers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.043290045">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.2.0/recyclerview-v7-23.2.0-sources.jar!/android/support/v7/widget/StaggeredGridLayoutManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.333333">
-          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38403615">
-          <caret line="17" column="67" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="67" />
-          <folding>
-            <element signature="e#623#660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/GridSpacingItemDecoration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10460251">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsActivity.java">
+    <entry file="file://$USER_HOME$/.gradle/gradle.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23012552">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3255#3256#0" expanded="false" />
-            <element signature="e#3335#3336#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/c84c6f18844d9ae76308619008d40277de5e77d3/glide-3.6.1-sources.jar!/com/bumptech/glide/GifRequestBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11682243">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/c84c6f18844d9ae76308619008d40277de5e77d3/glide-3.6.1-sources.jar!/com/bumptech/glide/GifTypeRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11682243">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.1/c84c6f18844d9ae76308619008d40277de5e77d3/glide-3.6.1-sources.jar!/com/bumptech/glide/DrawableTypeRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41588786">
+          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3398058">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#PostsFragment#0" expanded="false" />
+            <element signature="e#1284#1285#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
             <element signature="e#1531#1532#0" expanded="false" />
             <element signature="e#1573#1574#0" expanded="false" />
             <element signature="e#3525#3526#0" expanded="false" />
@@ -2850,110 +2601,291 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.981132">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/GlideUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/not_found.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14480409">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11623932">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18052517">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.020190023">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_post_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42173913">
+          <caret line="99" column="58" selection-start-line="99" selection-start-column="58" selection-end-line="99" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_expand_more.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16531605">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_share.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08265802">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/util/DateTimeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5023328">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/nordlogic/imgursmostviral/PostDetailsScreenTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37013996">
+          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24797407">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27552673">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_time.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19286872">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_time_gray.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19286872">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_thumbs_up_down_gray.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19286872">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment_header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3475298">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37935844">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5721562">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_album_image.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26064736">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#946#961#0" expanded="true" />
+            <element signature="e#987#1014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.981132">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.7402799">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostImagesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9191291">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44974446">
+          <caret line="91" column="53" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_posts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.150944">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.55025554">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="e#734#749#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_post.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2618262">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/PostsResponse.java">
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/nordlogic/imgursmostviral/PostDetailPresenterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16736402">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/PostsRepositories.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10460251">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/PostResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18828452">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/responses/CommentsResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23012552">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state vertical-scroll-proportion="-12.892858">
+          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#222#237#0" expanded="true" />
+            <element signature="e#269#284#0" expanded="true" />
+            <element signature="e#314#329#0" expanded="true" />
+            <element signature="e#691#714#0" expanded="true" />
+            <element signature="e#1060#1084#0" expanded="true" />
+            <element signature="e#1442#1457#0" expanded="true" />
+            <element signature="e#1552#1580#0" expanded="true" />
+            <element signature="e#1884#1899#0" expanded="true" />
+            <element signature="e#1936#1951#0" expanded="true" />
+            <element signature="e#2036#2069#0" expanded="true" />
+            <element signature="e#2379#2394#0" expanded="true" />
+            <element signature="e#2484#2499#0" expanded="true" />
+            <element signature="e#2525#2548#0" expanded="true" />
           </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/api/PostsServiceApi.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/posts/PostsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54393303">
-          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state vertical-scroll-proportion="1.5799257">
+          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -2961,32 +2893,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
-          <folding>
-            <element signature="e#4196#4197#0" expanded="true" />
-            <element signature="e#4247#4248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/api/PostsServiceApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-          <folding>
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5660377">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="34" />
+          <caret line="105" column="35" selection-start-line="105" selection-start-column="35" selection-end-line="105" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -2994,52 +2901,53 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/repositories/PostsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Post.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostCommentsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
-          <folding>
-            <element signature="e#1546#1547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+        <state vertical-scroll-proportion="-0.74845105">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.7372986">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.357143">
+          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
+          <folding>
+            <element signature="e#4692#4693#0" expanded="true" />
+            <element signature="e#4742#4743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/data/models/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailsAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nordlogic/imgursmostviral/postdetail/PostDetailPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.2327044">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.4097035">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
           <folding>
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#1953#1954#0" expanded="true" />
           </folding>
         </state>
       </provider>

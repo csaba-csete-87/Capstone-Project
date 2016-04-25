@@ -1,5 +1,6 @@
 package com.nordlogic.imgursmostviral.postdetail;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
 import android.support.test.espresso.IdlingResource;
@@ -19,6 +20,8 @@ public class PostDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        DataBindingUtil.setContentView(this, R.layout.activity_post_detail);
 
         setupFragmentIfNeeded(savedInstanceState);
     }

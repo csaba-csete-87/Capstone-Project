@@ -15,8 +15,10 @@
             android:id="@+id/posts_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:paddingEnd="@dimen/recycler_view_default_margin"
-            android:paddingStart="@dimen/recycler_view_default_margin" />
+            android:paddingStart="@dimen/recycler_view_default_margin"
+            android:paddingTop="@dimen/grid_1" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 </layout>
