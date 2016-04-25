@@ -12,6 +12,7 @@ public class Comment {
     private String author;
     private int points;
     private long datetime;
+    private int childrenSize;
     private List<Comment> children;
 
     public int getId() {
@@ -40,5 +41,13 @@ public class Comment {
 
     public void setChildren(List<Comment> children) {
         this.children = children;
+    }
+
+    public int getChildrenSize() {
+        return childrenSize;
+    }
+
+    public void setChildrenSize(int childrenSize) {
+        this.childrenSize = childrenSize;
     }
 }

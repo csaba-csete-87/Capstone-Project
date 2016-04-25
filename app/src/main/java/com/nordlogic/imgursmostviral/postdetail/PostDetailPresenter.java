@@ -20,7 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class PostDetailPresenter implements PostDetailContract.Presenter, PostsRepository.GetPostCallback, PostsRepository.GetCommentsCallback {
     private final PostsRepository postsRepository;
     private final PostDetailContract.View view;
-    private List<Comment> comments;
+    private List<Comment> commentsWithReplies;
+    private List<Comment> displayedComments;
 
     public PostDetailPresenter(
             @NonNull PostsRepository postsRepository,
@@ -49,29 +50,37 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
         view.startShareActionProvider("https://imgur.com/");
     }
 
-    @Override
-    public void showRepliesForComment(Comment comment) {
-        Comment commentWithReplies = searchAndReplaceCommentRecursive(comment.getId());
-        view.setComments(comments);
-    }
-
-    private Comment searchAndReplaceCommentRecursive(int id) {
-        return null;
-    }
-
-    private int getCommentPosition(Comment strippedComment) {
-        for (int i = 0; i < comments.size(); i++) {
-            Comment c = comments.get(i);
-            if (c.getId() == strippedComment.getId()) {
-                return i;
+    private Comment searchCommentRecursive(int needle, List<Comment> haystack) {
+        for (Comment c : haystack) {
+            if (c.getId() == needle) {
+                return c;
+            } else {
+                searchCommentRecursive(needle, c.getChildren());
             }
         }
-        throw new IndexOutOfBoundsException("Stripped comment is not in original array.");
+        throw new RuntimeException("Did not find the comment I was looking for");
+    }
+
+    private void replaceCommentRecursive(int needle, List<Comment> haystack, Comment commentWithReplies) {
+        if (haystack == null) {
+            return;
+        }
+        for (int i = 0; i < haystack.size(); i++) {
+            Comment c = haystack.get(i);
+            if (c.getId() == needle) {
+                haystack.set(i, commentWithReplies);
+            } else {
+                replaceCommentRecursive(needle, c.getChildren(), commentWithReplies);
+            }
+        }
     }
 
     @Override
-    public void hideRepliesForComment(Comment comment) {
+    public void onCommentRowClicked(int commentId) {
+        Comment c = searchCommentRecursive(commentId, commentsWithReplies);
+        replaceCommentRecursive(commentId, displayedComments, c);
 
+        view.setComments(displayedComments);
     }
 
     @Override
@@ -111,17 +120,19 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
 
     @Override
     public void onCommentsLoaded(List<Comment> comments) {
-        this.comments = comments;
+        this.commentsWithReplies = comments;
+        setStrippedComments();
+
+        view.setComments(displayedComments);
         view.setProgressIndicator(false);
-        view.setComments(stripCommentsOfReplies(comments));
     }
 
-    private List<Comment> stripCommentsOfReplies(List<Comment> comments) {
-        List<Comment> strippedComments = new ArrayList<>();
-        for (Comment comment : comments) {
+    private void setStrippedComments() {
+        displayedComments = new ArrayList<>();
+        for (Comment comment : commentsWithReplies) {
+            comment.setChildrenSize(comment.getChildren().size());
             comment.setChildren(null);
-            strippedComments.add(comment);
+            displayedComments.add(comment);
         }
-        return strippedComments;
     }
 }

@@ -60,7 +60,7 @@ public class PostCommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         holder.points.setText(String.valueOf(c.getPoints()));
         holder.postedWhen.setText(DateTimeUtils.getReadableTimeElapsedSHort(c.getDatetime()));
         if (commentHasChildren(c)) {
-            holder.replyCount.setText(getReplyText(c.getChildren().size()));
+            holder.replyCount.setText(getReplyText(c.getChildrenSize()));
 
             PostCommentsAdapter adapter = new PostCommentsAdapter(c.getChildren(), commentClickListener);
             holder.replies.setAdapter(adapter);
@@ -79,7 +79,7 @@ public class PostCommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private boolean commentHasChildren(final Comment c) {
-        return (c.getChildren() != null && c.getChildren().size() > 0);
+        return (c.getChildrenSize() > 0);
     }
 
     private Comment getItem(int position) {
@@ -110,12 +110,12 @@ public class PostCommentsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         @Override
         public void onClick(View view) {
-            commentClickListener.onCommentClicked(getItem(getAdapterPosition()));
+            commentClickListener.onCommentClicked(getItem(getAdapterPosition()).getId());
         }
     }
 
     public interface CommentItemClickListener {
 
-        void onCommentClicked(Comment c);
+        void onCommentClicked(int commentId);
     }
 }

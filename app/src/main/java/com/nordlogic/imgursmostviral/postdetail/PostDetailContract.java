@@ -36,8 +36,6 @@ public interface PostDetailContract {
 
         void onShareButtonClicked();
 
-        void showRepliesForComment(Comment comment);
-
-        void hideRepliesForComment(Comment comment);
+        void onCommentRowClicked(int commentId);
     }
 }

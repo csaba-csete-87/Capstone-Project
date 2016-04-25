@@ -64,11 +64,17 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         imagesAdapter = new PostImagesAdapter(null);
         commentsAdapter = new PostCommentsAdapter(null, this);
 
+        LinearLayoutManager llm1 = new LinearLayoutManager(getActivity());
+        llm1.setOrientation(LinearLayoutManager.VERTICAL);
+
+        LinearLayoutManager llm2 = new LinearLayoutManager(getActivity());
+        llm2.setOrientation(LinearLayoutManager.VERTICAL);
+
+        binding.postImages.setLayoutManager(llm1);
+        binding.postComments.setLayoutManager(llm2);
+
         binding.postImages.setAdapter(imagesAdapter);
         binding.postComments.setAdapter(commentsAdapter);
-
-        binding.postImages.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        binding.postComments.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
     }
 
     @Override
@@ -145,7 +151,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     }
 
     @Override
-    public void onCommentClicked(Comment c) {
-        presenter.showRepliesForComment(c);
+    public void onCommentClicked(int commentId) {
+        presenter.onCommentRowClicked(commentId);
     }
 }
