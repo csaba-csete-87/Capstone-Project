@@ -1,81 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/grid_1"
-    android:layout_marginStart="@dimen/grid_1"
-    android:layout_marginTop="@dimen/grid_1"
-    android:orientation="vertical">
+    android:background="?selectableItemBackground"
+    android:paddingEnd="@dimen/grid_1"
+    android:paddingStart="@dimen/grid_1"
+    android:paddingTop="@dimen/grid_1">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/comment_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/dummy_username"
+        android:textColor="?colorPrimary" />
 
-        <TextView
-            android:id="@+id/comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="@string/dummy_comment"
-            android:textAppearance="?textAppearanceListItem"
-            android:textColorLink="?colorAccent" />
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/comment_owner"
+        android:layout_centerVertical="true"
+        android:autoLink="web"
+        android:text="@string/dummy_comment"
+        android:textAppearance="?textAppearanceListItem"
+        android:textColorLink="?colorAccent" />
 
-        <TextView
-            android:id="@+id/comment_owner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/comment"
-            android:text="@string/dummy_username"
-            android:textColor="?colorPrimary" />
+    <TextView
+        android:id="@+id/comment_reply_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment"
+        android:drawableStart="@drawable/ic_expand_more"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/grid_1"
+        android:paddingTop="@dimen/grid_1"
+        android:text="@string/dummy_replies" />
 
-        <TextView
-            android:id="@+id/comment_points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/comment"
-            android:layout_toStartOf="@+id/comment_posted_when"
-            android:drawablePadding="@dimen/grid_1"
-            android:drawableStart="@drawable/ic_thumbs_up_down_gray"
-            android:text="@string/dummy_points_short" />
+    <TextView
+        android:id="@+id/comment_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/comment_reply_count"
+        android:layout_toStartOf="@+id/comment_posted_when"
+        android:drawablePadding="@dimen/grid_1"
+        android:drawableStart="@drawable/ic_thumbs_up_down_gray"
+        android:gravity="center_vertical"
+        android:paddingEnd="@dimen/grid_1"
+        android:text="@string/dummy_points_short" />
 
-        <TextView
-            android:id="@id/comment_posted_when"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/comment"
-            android:layout_marginStart="@dimen/grid_2"
-            android:drawablePadding="@dimen/grid_1"
-            android:drawableStart="@drawable/ic_time_gray"
-            android:text="@string/dummy_posted_when_short" />
+    <TextView
+        android:id="@id/comment_posted_when"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/comment_reply_count"
+        android:layout_alignParentEnd="true"
+        android:drawablePadding="@dimen/grid_1"
+        android:drawableStart="@drawable/ic_time_gray"
+        android:gravity="center_vertical"
+        android:text="@string/dummy_posted_when_short" />
 
-        <TextView
-            android:id="@+id/comment_reply_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/comment_owner"
-            android:layout_centerHorizontal="true"
-            android:drawablePadding="@dimen/grid_1"
-            android:drawableStart="@drawable/ic_expand_more"
-            android:padding="@dimen/grid_1"
-            android:text="@string/dummy_replies" />
-    </RelativeLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="?colorPrimary" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/replies"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/grid_1" />
-
-    </FrameLayout>
-
-</LinearLayout>
+</RelativeLayout>

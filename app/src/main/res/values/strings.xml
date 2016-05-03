@@ -18,4 +18,11 @@
     <string name="dummy_description">This is a dummy description for an image item that goes into a card at the bottom</string>
     <string name="replies_singular">%d reply</string>
     <string name="replies_plural">%d replies</string>
+    <string name="sort_comments_by">Sort comments by:</string>
+    <string name="dummy_sort">Best</string>
+    <string name="newest">New</string>
+    <string name="best">Best</string>
+    <string name="top">Top</string>
+    <string name="sync_account_type">imgursmostviral.csabacsete.com</string>
+    <string name="content_authority">com.csabacsete.imgursmostviral</string>
 </resources>

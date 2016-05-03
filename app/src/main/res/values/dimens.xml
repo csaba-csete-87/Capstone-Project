@@ -8,8 +8,10 @@
     <dimen name="m_keyline">8dp</dimen>
     <dimen name="detail_photo_height">240dp</dimen>
     <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_1_5">12dp</dimen>
     <dimen name="grid_2">16dp</dimen>
     <dimen name="fab_elevation">4dp</dimen>
     <dimen name="fab_press_translation_z">12dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="small_icon_size">24dp</dimen>
 </resources>

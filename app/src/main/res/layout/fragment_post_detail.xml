@@ -3,7 +3,7 @@
 
     <data>
 
-        <import type="com.nordlogic.imgursmostviral.R" />
+        <import type="com.csabacsete.imgursmostviral.R" />
 
     </data>
 
@@ -101,10 +101,37 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
-                    <include layout="@layout/item_comment_header" />
+                    <LinearLayout
+                        android:id="@+id/sort_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?selectableItemBackground"
+                        android:clickable="true"
+                        android:orientation="horizontal">
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/post_comments"
+                        <TextView
+                            android:id="@+id/sort_comments_by"
+                            style="?android:textAppearanceButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/grid_1"
+                            android:text="@string/sort_comments_by"
+                            android:textAppearance="?textAppearanceListItem" />
+
+                        <TextView
+                            android:id="@+id/sort"
+                            style="?android:textAppearanceButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/grid_1"
+                            android:text="@string/dummy_sort"
+                            android:textAppearance="?textAppearanceListItem"
+                            android:textColor="?colorAccent" />
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/comments_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
