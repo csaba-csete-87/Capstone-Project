@@ -41,7 +41,7 @@ public class CommentViewHolder extends TreeNode.BaseNodeViewHolder<CommentViewHo
         comment.setText(c.getComment());
         owner.setText(c.getAuthor());
         points.setText(String.valueOf(c.getPoints()));
-        postedWhen.setText(DateTimeUtils.getReadableTimeElapsedSHort(c.getDatetime()));
+        postedWhen.setText(DateTimeUtils.getReadableTimeElapsedShort(c.getDatetime()));
         if (commentHasChildren(c)) {
             replyCount.setText(getReplyText(c.getChildrenSize()));
         } else {

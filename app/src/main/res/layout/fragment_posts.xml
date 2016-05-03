@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,14 +12,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/posts_list"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingEnd="@dimen/recycler_view_default_margin"
-            android:paddingStart="@dimen/recycler_view_default_margin"
-            android:paddingTop="@dimen/grid_1" />
+            android:layout_height="match_parent">
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/posts_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="?actionBarSize"
+                android:paddingEnd="@dimen/recycler_view_default_margin"
+                android:paddingStart="@dimen/recycler_view_default_margin"
+                android:paddingTop="@dimen/grid_1" />
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/ad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id" />
+
+        </FrameLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 </layout>

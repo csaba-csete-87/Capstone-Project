@@ -7,149 +7,156 @@
 
     </data>
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/detail_content"
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/top_info_container"
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/detail_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
-            <FrameLayout
+            <LinearLayout
+                android:id="@+id/top_info_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?colorPrimary"
-                android:elevation="@dimen/toolbar_elevation">
+                android:orientation="vertical">
 
-                <RelativeLayout
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="?actionBarSize"
-                    android:paddingBottom="@dimen/grid_1"
-                    android:paddingTop="@dimen/grid_1">
+                    android:background="?colorPrimary"
+                    android:elevation="@dimen/toolbar_elevation">
 
-                    <TextView
-                        android:id="@+id/title"
-                        style="@style/PostInfoLayoutTextStyleMedium"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLines="@integer/max_title_lines"
-                        android:text="@string/dummy_title" />
-
-                    <TextView
-                        android:id="@+id/posted_by"
-                        style="@style/PostInfoLayoutTextStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/title"
-                        android:text="@string/by" />
-
-                    <TextView
-                        android:id="@+id/posted_by_username"
-                        style="@style/PostInfoLayoutTextStyleSmall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/title"
-                        android:layout_toEndOf="@id/posted_by"
-                        android:text="@string/dummy_username"
-                        android:textColor="?colorAccent" />
-
-                    <TextView
-                        android:id="@+id/points"
-                        style="@style/PostInfoLayoutTextStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/posted_by"
-                        android:drawablePadding="@dimen/grid_2"
-                        android:drawableStart="@drawable/ic_thumbs_up_down"
-                        android:text="@string/dummy_points" />
-
-                    <TextView
-                        android:id="@+id/posted_when"
-                        style="@style/PostInfoLayoutTextStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/posted_by"
-                        android:layout_toEndOf="@id/points"
-                        android:drawablePadding="@dimen/grid_2"
-                        android:drawableStart="@drawable/ic_time"
-                        android:text="@string/dummy_posted_when" />
-                </RelativeLayout>
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?actionBarSize" />
-            </FrameLayout>
-
-            <android.support.v4.widget.NestedScrollView
-                android:id="@+id/post_content_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/post_images"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                    <LinearLayout
-                        android:id="@+id/sort_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="?selectableItemBackground"
-                        android:clickable="true"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="?actionBarSize"
+                        android:paddingBottom="@dimen/grid_1"
+                        android:paddingTop="@dimen/grid_1">
 
                         <TextView
-                            android:id="@+id/sort_comments_by"
-                            style="?android:textAppearanceButton"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/title"
+                            style="@style/PostInfoLayoutTextStyleMedium"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="@dimen/grid_1"
-                            android:text="@string/sort_comments_by"
-                            android:textAppearance="?textAppearanceListItem" />
+                            android:maxLines="@integer/max_title_lines"
+                            android:text="@string/dummy_title" />
 
                         <TextView
-                            android:id="@+id/sort"
-                            style="?android:textAppearanceButton"
+                            android:id="@+id/posted_by"
+                            style="@style/PostInfoLayoutTextStyleSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="@dimen/grid_1"
-                            android:text="@string/dummy_sort"
-                            android:textAppearance="?textAppearanceListItem"
+                            android:layout_below="@id/title"
+                            android:text="@string/by" />
+
+                        <TextView
+                            android:id="@+id/posted_by_username"
+                            style="@style/PostInfoLayoutTextStyleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title"
+                            android:layout_toEndOf="@id/posted_by"
+                            android:text="@string/dummy_username"
                             android:textColor="?colorAccent" />
 
+                        <TextView
+                            android:id="@+id/points"
+                            style="@style/PostInfoLayoutTextStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/posted_by"
+                            android:drawablePadding="@dimen/grid_2"
+                            android:drawableStart="@drawable/ic_thumbs_up_down"
+                            android:text="@string/dummy_points" />
+
+                        <TextView
+                            android:id="@+id/posted_when"
+                            style="@style/PostInfoLayoutTextStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/posted_by"
+                            android:layout_toEndOf="@id/points"
+                            android:drawablePadding="@dimen/grid_2"
+                            android:drawableStart="@drawable/ic_time"
+                            android:text="@string/dummy_posted_when" />
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize" />
+                </FrameLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/post_content_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/post_images"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/sort_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?selectableItemBackground"
+                            android:clickable="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/sort_comments_by"
+                                style="?android:textAppearanceButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/grid_1"
+                                android:text="@string/sort_comments_by"
+                                android:textAppearance="?textAppearanceListItem" />
+
+                            <TextView
+                                android:id="@+id/sort"
+                                style="?android:textAppearanceButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/grid_1"
+                                android:text="@string/dummy_sort"
+                                android:textAppearance="?textAppearanceListItem"
+                                android:textColor="?colorAccent" />
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/comments_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
-                    <FrameLayout
-                        android:id="@+id/comments_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
 
-            </android.support.v4.widget.NestedScrollView>
-        </LinearLayout>
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/share_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/grid_2"
-            android:src="@drawable/ic_share"
-            android:tint="@android:color/white"
-            app:borderWidth="0dp"
-            app:elevation="@dimen/fab_elevation"
-            app:layout_anchor="@id/top_info_container"
-            app:layout_anchorGravity="bottom|right|end"
-            app:pressedTranslationZ="@dimen/fab_press_translation_z" />
-    </android.support.design.widget.CoordinatorLayout>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/grid_2"
+                android:src="@drawable/ic_share"
+                android:tint="@android:color/white"
+                app:borderWidth="0dp"
+                app:elevation="@dimen/fab_elevation"
+                app:layout_anchor="@id/top_info_container"
+                app:layout_anchorGravity="bottom|right|end"
+                app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        </android.support.design.widget.CoordinatorLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </layout>

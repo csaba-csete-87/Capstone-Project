@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "733933065325",
+    "project_id": "trending-on-imgur"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733933065325:android:432f0b181bfa8d4a",
+        "android_client_info": {
+          "package_name": "com.csabacsete.imgursmostviral"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxLXfqjwiAmBprSRc2FhQrfIydVDYXL6Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-77239941-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

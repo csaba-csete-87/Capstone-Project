@@ -11,6 +11,9 @@ import java.util.List;
 public interface PostDetailContract {
 
     interface View {
+
+        void setProgressIndicator(boolean active);
+
         void setTitle(String title);
 
         void setPostedByUsername(String username);
@@ -27,7 +30,7 @@ public interface PostDetailContract {
 
         void showSelectSortTypeDialog();
 
-        void startLargeImageViewer(String path);
+        void startZoomingImageViewer(String path);
     }
 
     interface Presenter {
@@ -38,7 +41,7 @@ public interface PostDetailContract {
 
         void onShareButtonClicked();
 
-        void onGalleryItemClicked();
+        void onGalleryItemClicked(Image image);
 
         void onSortTypeClicked();
     }

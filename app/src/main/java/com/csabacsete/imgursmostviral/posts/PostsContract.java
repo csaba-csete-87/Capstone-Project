@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by csaba.csete on 2016-02-24.
  */
-public interface ImgurContract {
+public interface PostsContract {
 
     interface View {
 

@@ -1,28 +1,41 @@
 <resources>
     <string name="app_name">Imgur\'s Most Viral</string>
-    <string name="title_activity_posts">PostsActivity</string>
-    <string name="title_activity_post_detail">PostDetailActivity</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="invalid_item_type">Invalid item type</string>
-    <string name="transition_photo">sharedElementTransition</string>
     <string name="by">By</string>
-    <string name="dummy_title">This is the dummy title of a post</string>
-    <string name="dummy_username">DummyUsername200</string>
-    <string name="dummy_points">20000 Points</string>
-    <string name="dummy_posted_when">11 Hours ago</string>
-    <string name="dummy_comment">This is a dummy comment to a post</string>
-    <string name="dummy_replies">43 replies</string>
-    <string name="dummy_points_short">3200</string>
-    <string name="dummy_posted_when_short">23h</string>
-    <string name="dummy_description">This is a dummy description for an image item that goes into a card at the bottom</string>
     <string name="replies_singular">%d reply</string>
     <string name="replies_plural">%d replies</string>
     <string name="sort_comments_by">Sort comments by:</string>
-    <string name="dummy_sort">Best</string>
     <string name="newest">New</string>
     <string name="best">Best</string>
     <string name="top">Top</string>
+
+    <!-- Not translatable strings -->
+    <string name="action" translatable="false">Action</string>
+    <string name="selected_post" translatable="false">Selected a post</string>
+    <string name="transition_photo" translatable="false">sharedElementTransition</string>
+
+    <!-- App keys -->
     <string name="sync_account_type">imgursmostviral.csabacsete.com</string>
     <string name="content_authority">com.csabacsete.imgursmostviral</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!-- Dummy content -->
+    <string name="dummy_title" translatable="false">This is the dummy title of a post</string>
+    <string name="dummy_username" translatable="false">DummyUsername200</string>
+    <string name="dummy_points" translatable="false">20000 Points</string>
+    <string name="dummy_posted_when" translatable="false">11 Hours ago</string>
+    <string name="dummy_comment" translatable="false">This is a dummy comment to a post</string>
+    <string name="dummy_replies" translatable="false">43 replies</string>
+    <string name="dummy_points_short" translatable="false">3200</string>
+    <string name="dummy_posted_when_short" translatable="false">23h</string>
+    <string name="dummy_description" translatable="false">This is a dummy description for an image item that goes into a card at the bottom</string>
+    <string name="dummy_sort" translatable="false">Best</string>
+    <string name="clicked_on_ad">Clicked on ad</string>
+    <string name="post_details">Post Details</string>
+    <string name="posts_grid">Posts Grid</string>
+    <string name="clicked_share">Clicked share</string>
+    <string name="clicked_on_comment">Clicked on comment</string>
+    <string name="clicked_sort">Clicked sort</string>
+
 </resources>

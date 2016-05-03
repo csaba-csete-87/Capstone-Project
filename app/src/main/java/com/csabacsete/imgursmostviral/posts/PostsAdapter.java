@@ -8,14 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.csabacsete.imgursmostviral.R;
 import com.csabacsete.imgursmostviral.data.models.Post;
-import com.csabacsete.imgursmostviral.util.EspressoIdlingResource;
+import com.csabacsete.imgursmostviral.util.GlideUtils;
 
 import java.util.List;
 
@@ -26,8 +21,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
 
-    private List<Post> mPosts;
     private final PostItemListener mItemListener;
+    private List<Post> mPosts;
     private Context mContext;
 
     public PostsAdapter(List<Post> posts, PostItemListener itemListener) {
@@ -50,17 +45,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         holder.title.setText(post.getTitle());
 
-        EspressoIdlingResource.increment();
-        Glide.with(mContext)
-                .load(post.getThumbnail())
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(new GlideDrawableImageViewTarget(holder.thumbnail) {
-                    @Override
-                    public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
-                        super.onResourceReady(resource, animation);
-                        EspressoIdlingResource.decrement();
-                    }
-                });
+        GlideUtils.loadImage(mContext, post.getThumbnail(), null, holder.thumbnail);
     }
 
     public void replaceData(List<Post> posts) {
@@ -79,6 +64,11 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     public Post getItem(int position) {
         return mPosts.get(position);
+    }
+
+    public interface PostItemListener {
+
+        void onPostClick(Post clickedPost);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -102,10 +92,5 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         public void onClick(View v) {
             mItemListener.onPostClick(getItem(getAdapterPosition()));
         }
-    }
-
-    public interface PostItemListener {
-
-        void onPostClick(Post clickedPost);
     }
 }

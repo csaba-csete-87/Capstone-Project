@@ -1,8 +1,6 @@
 package com.csabacsete.imgursmostviral.util;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import android.text.format.DateUtils;
 
 /**
  * Created by ccsete on 4/24/16.
@@ -13,16 +11,18 @@ public class DateTimeUtils {
     }
 
     public static String getReadableTimeElapsed(long dateTime) {
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date(dateTime));
-        // TODO: 4/24/16 get proper readable date
-        return c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault());
+        return DateUtils.getRelativeTimeSpanString(dateTime * 1000).toString();
     }
 
-    public static String getReadableTimeElapsedSHort(long dateTime) {
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date(dateTime));
-        // TODO: 4/24/16 get proper readable date
-        return c.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault());
+    public static String getReadableTimeElapsedShort(long datetime) {
+        String readableShort = getReadableTimeElapsed(datetime);
+        readableShort = readableShort.replace("days ago", "d");
+        readableShort = readableShort.replace("day ago", "d");
+        readableShort = readableShort.replace("hours ago", "h");
+        readableShort = readableShort.replace("hour ago", "h");
+        readableShort = readableShort.replace("minutes ago", "m");
+        readableShort = readableShort.replace("minute ago", "m");
+        readableShort = readableShort.replace("0 m", "just now");
+        return readableShort;
     }
 }

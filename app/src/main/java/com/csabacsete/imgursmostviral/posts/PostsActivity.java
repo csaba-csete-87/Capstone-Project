@@ -2,17 +2,14 @@ package com.csabacsete.imgursmostviral.posts;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
-import android.support.test.espresso.IdlingResource;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.csabacsete.imgursmostviral.R;
-import com.csabacsete.imgursmostviral.databinding.ActivityPostsBinding;
-import com.csabacsete.imgursmostviral.util.EspressoIdlingResource;
 import com.csabacsete.imgursmostviral.data.db.sync.ImgurSyncAdapter;
+import com.csabacsete.imgursmostviral.databinding.ActivityPostsBinding;
 
 public class PostsActivity extends AppCompatActivity {
 
@@ -40,10 +37,4 @@ public class PostsActivity extends AppCompatActivity {
         transaction.add(R.id.content_frame, postsFragment);
         transaction.commit();
     }
-
-    @VisibleForTesting
-    public IdlingResource getCountingIdlingResource() {
-        return EspressoIdlingResource.getIdlingResource();
-    }
-
 }

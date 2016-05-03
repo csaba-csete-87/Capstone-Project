@@ -4,21 +4,29 @@ package com.csabacsete.imgursmostviral.postdetail;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.csabacsete.imgursmostviral.ImgurApplication;
 import com.csabacsete.imgursmostviral.Injection;
 import com.csabacsete.imgursmostviral.R;
 import com.csabacsete.imgursmostviral.data.models.Comment;
 import com.csabacsete.imgursmostviral.data.models.Image;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.databinding.FragmentPostDetailBinding;
+import com.csabacsete.imgursmostviral.util.AnalyticsUtil;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.unnamed.b.atv.model.TreeNode;
 
 import java.util.List;
@@ -34,6 +42,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     private FragmentPostDetailBinding binding;
     private PostImagesAdapter imagesAdapter;
     private String postId;
+    private Tracker tracker;
 
     public static PostDetailFragment newInstance(String postId) {
         Bundle args = new Bundle();
@@ -67,13 +76,39 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        trackScreen();
+    }
+
+    @Override
+    public void setProgressIndicator(boolean active) {
+        boolean showRefresh = false;
+        if (active) {
+            if (!binding.refreshLayout.isRefreshing()) {
+                showRefresh = true;
+                binding.refreshLayout.setRefreshing(true);
+            } else {
+                return;
+            }
+        }
+
+        binding.refreshLayout.setRefreshing(showRefresh);
+    }
+
+    @Override
     public void setTitle(final String title) {
         binding.title.setText(title);
     }
 
     @Override
     public void setPostedByUsername(final String username) {
-        binding.postedByUsername.setText(username);
+        if (!TextUtils.isEmpty(username)) {
+            binding.postedByUsername.setText(username);
+        } else {
+            binding.postedBy.setVisibility(View.GONE);
+            binding.postedByUsername.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -93,19 +128,16 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
     @Override
     public void setComments(List<Comment> comments) {
-        binding.commentsContainer.removeAllViews();
-        TreeNode root = addRepliesToNode(comments, TreeNode.root());
-
-        ImgurTreeView tView = new ImgurTreeView(getActivity(), root);
-        tView.setDefaultAnimation(true);
-        tView.setDefaultViewHolder(CommentViewHolder.class);
-        tView.setDefaultContainerStyle(R.style.TreeNodeStyleCustom);
-
-        binding.commentsContainer.addView(tView.getView());
+        //noinspection unchecked
+        new AddCommentSectionViewToLayoutTask().execute(comments);
     }
 
     @Override
     public void startShareActionProvider(String link) {
+        tracker.send(AnalyticsUtil.getEvent(
+                getString(R.string.action),
+                getString(R.string.clicked_on_ad)
+        ));
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, link);
@@ -134,15 +166,32 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     }
 
     @Override
-    public void startLargeImageViewer(String path) {
-        // TODO: 5/2/16 start shared element intent
+    public void startZoomingImageViewer(String path) {
+        // TODO: 5/2/16 maybe in a future this will be implemented
     }
 
     private void setupViews() {
+        setupRefreshLayout();
         setupToolbar();
-        setupGallery(); // TODO: 5/2/16 on item click listener for gallery
+        setupGallery();
         setupSort();
         setupFab();
+    }
+
+    private void setupRefreshLayout() {
+        binding.refreshLayout.setColorSchemeColors(
+                ContextCompat.getColor(getActivity(), R.color.colorPrimary),
+                ContextCompat.getColor(getActivity(), R.color.colorAccent));
+        binding.refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                presenter.getComments(postId, getCurrentSort());
+            }
+        });
+    }
+
+    private String getCurrentSort() {
+        return binding.sort.getText().toString().toLowerCase();
     }
 
     private void setupToolbar() {
@@ -162,12 +211,17 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
         binding.postImages.setLayoutManager(llm1);
         binding.postImages.setAdapter(imagesAdapter);
+        binding.postImages.setNestedScrollingEnabled(false);
     }
 
     private void setupSort() {
         binding.sortContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tracker.send(AnalyticsUtil.getEvent(
+                        getString(R.string.action),
+                        getString(R.string.clicked_sort)
+                ));
                 presenter.onSortTypeClicked();
             }
         });
@@ -177,6 +231,10 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         binding.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tracker.send(AnalyticsUtil.getEvent(
+                        getString(R.string.action),
+                        getString(R.string.clicked_share)
+                ));
                 presenter.onShareButtonClicked();
             }
         });
@@ -200,5 +258,47 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         return parentNode;
     }
 
+    private void trackScreen() {
+        ImgurApplication application = (ImgurApplication) getActivity().getApplication();
+        tracker = application.getDefaultTracker();
+        tracker.setScreenName(getString(R.string.post_details));
+        tracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
 
+    private class AddCommentSectionViewToLayoutTask extends AsyncTask<List<Comment>, Void, View> {
+
+        @Override
+        protected void onPreExecute() {
+            setProgressIndicator(true);
+        }
+
+        @Override
+        protected View doInBackground(List<Comment>... args) {
+            List<Comment> comments = args[0];
+
+            TreeNode root = addRepliesToNode(comments, TreeNode.root());
+
+            ImgurTreeView tView = new ImgurTreeView(getActivity(), root);
+            tView.setDefaultAnimation(true);
+            tView.setDefaultViewHolder(CommentViewHolder.class);
+            tView.setDefaultContainerStyle(R.style.TreeNodeStyleCustom);
+            tView.setDefaultNodeClickListener(new TreeNode.TreeNodeClickListener() {
+                @Override
+                public void onClick(TreeNode node, Object value) {
+                    tracker.send(AnalyticsUtil.getEvent(
+                            getString(R.string.action),
+                            getString(R.string.clicked_on_comment)
+                    ));
+                }
+            });
+            return tView.getView();
+        }
+
+        @Override
+        protected void onPostExecute(View view) {
+            binding.commentsContainer.removeAllViews();
+            binding.commentsContainer.addView(view);
+            setProgressIndicator(false);
+        }
+    }
 }

@@ -31,62 +31,6 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
         super(context, autoInitialize);
     }
 
-    @Override
-    public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
-        Log.d("Starting sync", "onPerformSync");
-
-        PostsRepository repository = Injection.provideServerRepository();
-
-        repository.getPosts(new PostsRepository.GetPostsCallback() {
-            @Override
-            public void onPostsLoaded(List<Post> posts) {
-                parseResponse(posts);
-            }
-        });
-    }
-
-    private void parseResponse(List<Post> posts) {
-        Vector<ContentValues> postsVector = new Vector<>(posts.size());
-
-        for (Post p : posts) {
-            ContentValues postValues = new ContentValues();
-
-            postValues.put(ImgurContract.PostEntry.COLUMN_POST_ID, p.getId());
-            postValues.put(ImgurContract.PostEntry.COLUMN_TITLE, p.getTitle());
-            postValues.put(ImgurContract.PostEntry.COLUMN_DESCRIPTION, p.getDescription());
-            postValues.put(ImgurContract.PostEntry.COLUMN_LINK, p.getLink());
-            postValues.put(ImgurContract.PostEntry.COLUMN_TYPE, p.getType());
-            postValues.put(ImgurContract.PostEntry.COLUMN_GIFV, p.getGifv());
-            postValues.put(ImgurContract.PostEntry.COLUMN_DATETIME, p.getDatetime());
-            postValues.put(ImgurContract.PostEntry.COLUMN_COVER, p.getCover());
-            postValues.put(ImgurContract.PostEntry.COLUMN_POINTS, p.getPoints());
-            postValues.put(ImgurContract.PostEntry.COLUMN_IMAGES_COUNT, p.getImagesCount());
-            postValues.put(ImgurContract.PostEntry.COLUMN_COMMENT_COUNT, p.getCommentCount());
-            postValues.put(ImgurContract.PostEntry.COLUMN_IS_ALBUM, p.isAlbum());
-            postValues.put(ImgurContract.PostEntry.COLUMN_ACCOUNT_URL, p.getAccountUrl());
-
-            postsVector.add(postValues);
-        }
-
-        if (postsVector.size() > 0) {
-            ContentValues[] cvArray = new ContentValues[postsVector.size()];
-            postsVector.toArray(cvArray);
-
-            getContext().getContentResolver().delete(
-                    ImgurContract.PostEntry.CONTENT_URI,
-                    null,
-                    null
-            );
-
-            getContext().getContentResolver().bulkInsert(
-                    ImgurContract.PostEntry.CONTENT_URI,
-                    cvArray
-            );
-        }
-
-        Log.d("Sync Complete. ", postsVector.size() + " Inserted");
-    }
-
     /**
      * Helper method to schedule the sync adapter periodic execution
      */
@@ -177,5 +121,61 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
 
     public static void initializeSyncAdapter(Context context) {
         getSyncAccount(context);
+    }
+
+    @Override
+    public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
+        Log.d("Starting sync", "onPerformSync");
+
+        PostsRepository repository = Injection.provideServerRepository();
+
+        repository.getPosts(new PostsRepository.GetPostsCallback() {
+            @Override
+            public void onPostsLoaded(List<Post> posts) {
+                parseResponse(posts);
+            }
+        });
+    }
+
+    private void parseResponse(List<Post> posts) {
+        Vector<ContentValues> postsVector = new Vector<>(posts.size());
+
+        for (Post p : posts) {
+            ContentValues postValues = new ContentValues();
+
+            postValues.put(ImgurContract.PostEntry.COLUMN_POST_ID, p.getId());
+            postValues.put(ImgurContract.PostEntry.COLUMN_TITLE, p.getTitle());
+            postValues.put(ImgurContract.PostEntry.COLUMN_DESCRIPTION, p.getDescription());
+            postValues.put(ImgurContract.PostEntry.COLUMN_LINK, p.getLink());
+            postValues.put(ImgurContract.PostEntry.COLUMN_TYPE, p.getType());
+            postValues.put(ImgurContract.PostEntry.COLUMN_GIFV, p.getGifv());
+            postValues.put(ImgurContract.PostEntry.COLUMN_DATETIME, p.getDatetime());
+            postValues.put(ImgurContract.PostEntry.COLUMN_COVER, p.getCover());
+            postValues.put(ImgurContract.PostEntry.COLUMN_POINTS, p.getPoints());
+            postValues.put(ImgurContract.PostEntry.COLUMN_IMAGES_COUNT, p.getImagesCount());
+            postValues.put(ImgurContract.PostEntry.COLUMN_COMMENT_COUNT, p.getCommentCount());
+            postValues.put(ImgurContract.PostEntry.COLUMN_IS_ALBUM, p.isAlbum());
+            postValues.put(ImgurContract.PostEntry.COLUMN_ACCOUNT_URL, p.getAccountUrl());
+
+            postsVector.add(postValues);
+        }
+
+        if (postsVector.size() > 0) {
+            ContentValues[] cvArray = new ContentValues[postsVector.size()];
+            postsVector.toArray(cvArray);
+
+            getContext().getContentResolver().delete(
+                    ImgurContract.PostEntry.CONTENT_URI,
+                    null,
+                    null
+            );
+
+            getContext().getContentResolver().bulkInsert(
+                    ImgurContract.PostEntry.CONTENT_URI,
+                    cvArray
+            );
+        }
+
+        Log.d("Sync Complete. ", postsVector.size() + " Inserted");
     }
 }

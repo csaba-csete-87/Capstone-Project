@@ -25,6 +25,18 @@ public class Comment {
         this.children = children;
     }
 
+    public static Comment cloneWithoutChildren(Comment c) {
+        return new Comment(
+                c.getId(),
+                c.getComment(),
+                c.getAuthor(),
+                c.getPoints(),
+                c.getDatetime(),
+                c.getChildren().size(),
+                null
+        );
+    }
+
     public int getId() {
         return id;
     }
@@ -79,17 +91,5 @@ public class Comment {
 
     public void setChildren(List<Comment> children) {
         this.children = children;
-    }
-
-    public static Comment cloneWithoutChildren(Comment c) {
-        return new Comment(
-                c.getId(),
-                c.getComment(),
-                c.getAuthor(),
-                c.getPoints(),
-                c.getDatetime(),
-                c.getChildren().size(),
-                null
-        );
     }
 }

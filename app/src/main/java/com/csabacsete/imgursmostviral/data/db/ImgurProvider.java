@@ -9,10 +9,9 @@ import android.net.Uri;
 
 public class ImgurProvider extends ContentProvider {
 
+    static final int POSTS = 100;
     private static final UriMatcher sUriMatcher = buildUriMatcher();
     private ImgurDbHelper mOpenHelper;
-
-    static final int POSTS = 100;
 
     static UriMatcher buildUriMatcher() {
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);

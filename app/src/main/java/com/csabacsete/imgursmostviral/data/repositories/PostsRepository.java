@@ -12,6 +12,14 @@ import java.util.List;
  */
 public interface PostsRepository {
 
+    void refreshData();
+
+    void getPosts(@NonNull GetPostsCallback callback);
+
+    void getPost(@NonNull String postId, @NonNull GetPostCallback callback);
+
+    void getComments(@NonNull String postId, String sort, @NonNull GetCommentsCallback callback);
+
     interface GetPostsCallback {
         void onPostsLoaded(List<Post> posts);
     }
@@ -23,12 +31,4 @@ public interface PostsRepository {
     interface GetCommentsCallback {
         void onCommentsLoaded(List<Comment> comments);
     }
-
-    void refreshData();
-
-    void getPosts(@NonNull GetPostsCallback callback);
-
-    void getPost(@NonNull String postId, @NonNull GetPostCallback callback);
-
-    void getComments(@NonNull String postId, String sort, @NonNull GetCommentsCallback callback);
 }

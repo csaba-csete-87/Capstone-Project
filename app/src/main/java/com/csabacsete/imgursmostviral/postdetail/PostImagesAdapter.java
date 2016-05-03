@@ -55,11 +55,20 @@ public class PostImagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         Image image = images.get(position);
         GlideUtils.loadImage(context, image.getLink(), image.getType(), holder.image);
 
+        if (imageHasTitle(image)) {
+            holder.title.setText(image.getTitle());
+        } else {
+            holder.title.setVisibility(View.GONE);
+        }
         if (imageHasDescription(image)) {
             holder.description.setText(image.getDescription());
         } else {
             holder.description.setVisibility(View.GONE);
         }
+    }
+
+    private boolean imageHasTitle(Image image) {
+        return (image.getTitle() != null && !TextUtils.isEmpty(image.getTitle()));
     }
 
     private boolean imageHasDescription(Image image) {
@@ -69,12 +78,14 @@ public class PostImagesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public class AlbumImageHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
+        TextView title;
         TextView description;
 
         public AlbumImageHolder(View itemView) {
             super(itemView);
 
             image = (ImageView) itemView.findViewById(R.id.image);
+            title = (TextView) itemView.findViewById(R.id.image_title);
             description = (TextView) itemView.findViewById(R.id.image_description);
         }
     }

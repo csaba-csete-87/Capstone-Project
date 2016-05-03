@@ -2,15 +2,12 @@ package com.csabacsete.imgursmostviral.postdetail;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.VisibleForTesting;
-import android.support.test.espresso.IdlingResource;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.csabacsete.imgursmostviral.R;
-import com.csabacsete.imgursmostviral.util.EspressoIdlingResource;
 
 
 public class PostDetailActivity extends AppCompatActivity {
@@ -44,10 +41,4 @@ public class PostDetailActivity extends AppCompatActivity {
         transaction.add(R.id.content_frame, postsFragment);
         transaction.commit();
     }
-
-    @VisibleForTesting
-    public IdlingResource getCountingIdlingResource() {
-        return EspressoIdlingResource.getIdlingResource();
-    }
-
 }

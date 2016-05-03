@@ -10,14 +10,12 @@ import java.util.List;
  */
 public class Post extends Image {
 
-    private static final String COVER_TEMPLATE = "http://i.imgur.com/%sm.jpg";
     public static final String TYPE_GIF = "image/gif";
-
     public static final String SORT_TYPE_BEST = "Best";
     public static final String SORT_TYPE_TOP = "Top";
     public static final String SORT_TYPE_NEWEST = "Newest";
     public static final String[] SORT_TYPES = {SORT_TYPE_BEST, SORT_TYPE_TOP, SORT_TYPE_NEWEST};
-
+    private static final String COVER_TEMPLATE = "http://i.imgur.com/%sm.jpg";
     private String cover;
     private int points;
     @SerializedName("images_count")
@@ -54,6 +52,10 @@ public class Post extends Image {
         return cover;
     }
 
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
     public int getPoints() {
         return points;
     }
@@ -70,27 +72,23 @@ public class Post extends Image {
         return isAlbum;
     }
 
-    public String getAccountUrl() {
-        return accountUrl;
+    public void setAlbum(boolean album) {
+        isAlbum = album;
     }
 
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
+    public String getAccountUrl() {
+        return accountUrl;
     }
 
     public List<Comment> getComments() {
         return comments;
     }
 
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
     public List<Image> getImages() {
         return images;
-    }
-
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
-    public void setAlbum(boolean album) {
-        isAlbum = album;
     }
 }

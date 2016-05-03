@@ -7,7 +7,6 @@ import com.csabacsete.imgursmostviral.data.models.Image;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.data.repositories.PostsRepository;
 import com.csabacsete.imgursmostviral.util.DateTimeUtils;
-import com.csabacsete.imgursmostviral.util.EspressoIdlingResource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class PostDetailPresenter implements PostDetailContract.Presenter, PostsRepository.GetPostCallback, PostsRepository.GetCommentsCallback {
     private final PostsRepository postsRepository;
     private final PostDetailContract.View view;
-    private String sort;
+    private boolean postInfoReceived;
+    private boolean commentsReceived;
 
     public PostDetailPresenter(
             @NonNull PostsRepository postsRepository,
@@ -39,7 +39,8 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
             return;
         }
 
-        EspressoIdlingResource.increment();
+        postInfoReceived = false;
+        view.setProgressIndicator(true);
         postsRepository.getPost(postId, this);
     }
 
@@ -50,7 +51,8 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
             return;
         }
 
-        EspressoIdlingResource.increment();
+        commentsReceived = false;
+        view.setProgressIndicator(true);
         postsRepository.getComments(postId, sort, this);
     }
 
@@ -60,8 +62,8 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
     }
 
     @Override
-    public void onGalleryItemClicked() {
-
+    public void onGalleryItemClicked(Image image) {
+        view.startZoomingImageViewer(image.getLink());
     }
 
     @Override
@@ -81,7 +83,8 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
         } else {
             // TODO: 5/2/16 notify view of error
         }
-        EspressoIdlingResource.decrement();
+        postInfoReceived = true;
+        view.setProgressIndicator(!commentsReceived);
     }
 
     private void setPostImages(Post post) {
@@ -110,7 +113,14 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
 
     @Override
     public void onCommentsLoaded(List<Comment> comments) {
-        view.setComments(comments);
+        if (comments != null) {
+            view.setComments(comments);
+        } else {
+            // TODO: 5/3/16 notify view
+        }
+
+        commentsReceived = true;
+        view.setProgressIndicator(!postInfoReceived);
     }
 
 }

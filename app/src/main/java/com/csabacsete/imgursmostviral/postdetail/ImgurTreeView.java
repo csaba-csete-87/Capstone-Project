@@ -48,6 +48,55 @@ public class ImgurTreeView extends AndroidTreeView {
         mRoot = root;
     }
 
+    private static void expand(final View v) {
+        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        final int targetHeight = v.getMeasuredHeight();
+
+        v.getLayoutParams().height = 0;
+        v.setVisibility(View.VISIBLE);
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                v.getLayoutParams().height = interpolatedTime == 1
+                        ? LinearLayout.LayoutParams.WRAP_CONTENT
+                        : (int) (targetHeight * interpolatedTime);
+                v.requestLayout();
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+
+        a.setDuration(ANIMATION_DURATION);
+        v.startAnimation(a);
+    }
+
+    private static void collapse(final View v) {
+        final int initialHeight = v.getMeasuredHeight();
+
+        Animation a = new Animation() {
+            @Override
+            protected void applyTransformation(float interpolatedTime, Transformation t) {
+                if (interpolatedTime == 1) {
+                    v.setVisibility(View.GONE);
+                } else {
+                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
+                    v.requestLayout();
+                }
+            }
+
+            @Override
+            public boolean willChangeBounds() {
+                return true;
+            }
+        };
+
+        a.setDuration(ANIMATION_DURATION);
+        v.startAnimation(a);
+    }
+
     public void setRoot(TreeNode mRoot) {
         this.mRoot = mRoot;
     }
@@ -95,7 +144,6 @@ public class ImgurTreeView extends AndroidTreeView {
         }
     }
 
-
     public View getView(int style) {
         final ViewGroup view;
         if (style > 0) {
@@ -134,7 +182,6 @@ public class ImgurTreeView extends AndroidTreeView {
     public View getView() {
         return getView(-1);
     }
-
 
     public void expandLevel(int level) {
         for (TreeNode n : mRoot.getChildren()) {
@@ -222,6 +269,9 @@ public class ImgurTreeView extends AndroidTreeView {
         }
     }
 
+    //------------------------------------------------------------
+    //  Selection methods
+
     private void expandNode(final TreeNode node, boolean includeSubnodes) {
         node.setExpanded(true);
         final TreeNode.BaseNodeViewHolder parentViewHolder = getViewHolderForNode(node);
@@ -279,22 +329,6 @@ public class ImgurTreeView extends AndroidTreeView {
         });
     }
 
-    //------------------------------------------------------------
-    //  Selection methods
-
-    public void setSelectionModeEnabled(boolean selectionModeEnabled) {
-        if (!selectionModeEnabled) {
-            // TODO fix double iteration over tree
-            deselectAll();
-        }
-        mSelectionModeEnabled = selectionModeEnabled;
-
-        for (TreeNode node : mRoot.getChildren()) {
-            toggleSelectionMode(node, selectionModeEnabled);
-        }
-
-    }
-
     public <E> List<E> getSelectedValues(Class<E> clazz) {
         List<E> result = new ArrayList<>();
         List<TreeNode> selected = getSelected();
@@ -309,6 +343,19 @@ public class ImgurTreeView extends AndroidTreeView {
 
     public boolean isSelectionModeEnabled() {
         return mSelectionModeEnabled;
+    }
+
+    public void setSelectionModeEnabled(boolean selectionModeEnabled) {
+        if (!selectionModeEnabled) {
+            // TODO fix double iteration over tree
+            deselectAll();
+        }
+        mSelectionModeEnabled = selectionModeEnabled;
+
+        for (TreeNode node : mRoot.getChildren()) {
+            toggleSelectionMode(node, selectionModeEnabled);
+        }
+
     }
 
     private void toggleSelectionMode(TreeNode parent, boolean mSelectionModeEnabled) {
@@ -399,55 +446,6 @@ public class ImgurTreeView extends AndroidTreeView {
             viewHolder.setTreeViev(this);
         }
         return viewHolder;
-    }
-
-    private static void expand(final View v) {
-        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        final int targetHeight = v.getMeasuredHeight();
-
-        v.getLayoutParams().height = 0;
-        v.setVisibility(View.VISIBLE);
-        Animation a = new Animation() {
-            @Override
-            protected void applyTransformation(float interpolatedTime, Transformation t) {
-                v.getLayoutParams().height = interpolatedTime == 1
-                        ? LinearLayout.LayoutParams.WRAP_CONTENT
-                        : (int) (targetHeight * interpolatedTime);
-                v.requestLayout();
-            }
-
-            @Override
-            public boolean willChangeBounds() {
-                return true;
-            }
-        };
-
-        a.setDuration(ANIMATION_DURATION);
-        v.startAnimation(a);
-    }
-
-    private static void collapse(final View v) {
-        final int initialHeight = v.getMeasuredHeight();
-
-        Animation a = new Animation() {
-            @Override
-            protected void applyTransformation(float interpolatedTime, Transformation t) {
-                if (interpolatedTime == 1) {
-                    v.setVisibility(View.GONE);
-                } else {
-                    v.getLayoutParams().height = initialHeight - (int) (initialHeight * interpolatedTime);
-                    v.requestLayout();
-                }
-            }
-
-            @Override
-            public boolean willChangeBounds() {
-                return true;
-            }
-        };
-
-        a.setDuration(ANIMATION_DURATION);
-        v.startAnimation(a);
     }
 
     //-----------------------------------------------------------------
