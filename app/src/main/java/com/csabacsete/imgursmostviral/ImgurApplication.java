@@ -5,6 +5,8 @@ import android.app.Application;
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 /**
  * Created by ccsete on 5/3/16.
@@ -31,5 +33,9 @@ public class ImgurApplication extends Application {
         super.onCreate();
 
         Stetho.initializeWithDefaults(this);
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .build();
+        ImageLoader.getInstance().init(config);
     }
 }

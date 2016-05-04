@@ -1,10 +1,16 @@
 package com.csabacsete.imgursmostviral.data.db;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.annotation.NonNull;
 
 import com.csabacsete.imgursmostviral.data.db.ImgurContract.PostEntry;
+import com.csabacsete.imgursmostviral.data.models.Post;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Manages a local database for weather data.
@@ -52,5 +58,40 @@ public class ImgurDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + PostEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
+    }
+
+    public List<Post> getAllPosts() {
+        SQLiteDatabase database = getWritableDatabase();
+        Cursor c = database.rawQuery("SELECT * FROM " + PostEntry.TABLE_NAME, null);
+        List<Post> posts = getPostListFromCursor(c);
+        c.close();
+        return posts;
+    }
+
+    @NonNull
+    public static ArrayList<Post> getPostListFromCursor(Cursor cursor) {
+        ArrayList<Post> posts = new ArrayList<>();
+
+        for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+
+            Post p = new Post(
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_POST_ID)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_TITLE)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_DESCRIPTION)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_LINK)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_TYPE)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_GIFV)),
+                    cursor.getLong(cursor.getColumnIndex(PostEntry.COLUMN_DATETIME)),
+                    cursor.getString(cursor.getColumnIndex(PostEntry.COLUMN_COVER)),
+                    getBooleanFromInt(cursor.getInt(cursor.getColumnIndex(PostEntry.COLUMN_IS_ALBUM)))
+            );
+
+            posts.add(p);
+        }
+        return posts;
+    }
+
+    private static boolean getBooleanFromInt(int isAlbum) {
+        return isAlbum == 1;
     }
 }

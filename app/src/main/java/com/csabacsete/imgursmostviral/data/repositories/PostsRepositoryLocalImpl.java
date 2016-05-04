@@ -88,6 +88,11 @@ public class PostsRepositoryLocalImpl implements PostsRepository, LoaderManager.
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        getPostsCallback.onPostsLoaded(getPostListFromCursor(cursor));
+    }
+
+    @NonNull
+    private ArrayList<Post> getPostListFromCursor(Cursor cursor) {
         ArrayList<Post> posts = new ArrayList<>();
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
@@ -106,8 +111,7 @@ public class PostsRepositoryLocalImpl implements PostsRepository, LoaderManager.
 
             posts.add(p);
         }
-
-        getPostsCallback.onPostsLoaded(posts);
+        return posts;
     }
 
     private boolean getBooleanFromInt(int isAlbum) {
