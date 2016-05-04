@@ -15,6 +15,7 @@ public class DateTimeUtils {
     }
 
     public static String getReadableTimeElapsedShort(long datetime) {
+        // TODO: 5/4/16 do something about these strings
         String readableShort = getReadableTimeElapsed(datetime);
         readableShort = readableShort.replace("days ago", "d");
         readableShort = readableShort.replace("day ago", "d");

@@ -18,7 +18,7 @@ public interface PostDetailContract {
 
         void setPostedByUsername(String username);
 
-        void setPoints(String points);
+        void setPoints(int points);
 
         void setPostedWhen(String postedWhen);
 
@@ -26,11 +26,11 @@ public interface PostDetailContract {
 
         void setComments(List<Comment> comments);
 
-        void startShareActionProvider(String link);
-
         void showSelectSortTypeDialog();
 
         void startZoomingImageViewer(String path);
+
+        void sharePost(String link);
     }
 
     interface Presenter {
@@ -39,10 +39,10 @@ public interface PostDetailContract {
 
         void getComments(String postId, String sort);
 
-        void onShareButtonClicked();
-
         void onGalleryItemClicked(Image image);
 
         void onSortTypeClicked();
+
+        void onShareButtonClicked();
     }
 }

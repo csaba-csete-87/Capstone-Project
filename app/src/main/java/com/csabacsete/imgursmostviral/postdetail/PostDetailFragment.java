@@ -112,8 +112,12 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     }
 
     @Override
-    public void setPoints(final String points) {
-        binding.points.setText(points);
+    public void setPoints(int points) {
+        String unformatted = getString(R.string.points_plural);
+        if (points == 1) {
+            unformatted = getString(R.string.points_singular);
+        }
+        binding.points.setText(String.format(unformatted, points));
     }
 
     @Override
@@ -130,18 +134,6 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     public void setComments(List<Comment> comments) {
         //noinspection unchecked
         new AddCommentSectionViewToLayoutTask().execute(comments);
-    }
-
-    @Override
-    public void startShareActionProvider(String link) {
-        tracker.send(AnalyticsUtil.getEvent(
-                getString(R.string.action),
-                getString(R.string.clicked_on_ad)
-        ));
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, link);
-        startActivity(sendIntent);
     }
 
     @Override
@@ -168,6 +160,15 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     @Override
     public void startZoomingImageViewer(String path) {
         // TODO: 5/2/16 maybe in a future this will be implemented
+    }
+
+    @Override
+    public void sharePost(String link) {
+        tracker.send(AnalyticsUtil.getEvent(
+                getString(R.string.action),
+                getString(R.string.clicked_share)
+        ));
+        startActivity(getShareIntent(link));
     }
 
     private void setupViews() {
@@ -231,10 +232,6 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         binding.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tracker.send(AnalyticsUtil.getEvent(
-                        getString(R.string.action),
-                        getString(R.string.clicked_share)
-                ));
                 presenter.onShareButtonClicked();
             }
         });
@@ -265,6 +262,14 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         tracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
+    private Intent getShareIntent(String link) {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, link);
+        shareIntent.setType("text/plain");
+        return shareIntent;
+    }
+
     private class AddCommentSectionViewToLayoutTask extends AsyncTask<List<Comment>, Void, View> {
 
         @Override
@@ -272,8 +277,9 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
             setProgressIndicator(true);
         }
 
+        @SafeVarargs
         @Override
-        protected View doInBackground(List<Comment>... args) {
+        protected final View doInBackground(List<Comment>... args) {
             List<Comment> comments = args[0];
 
             TreeNode root = addRepliesToNode(comments, TreeNode.root());

@@ -243,7 +243,7 @@ public class ImgurTreeView extends AndroidTreeView {
         }
     }
 
-    private void toggleNode(TreeNode node) {
+    public void toggleNode(TreeNode node) {
         if (node.isExpanded()) {
             collapseNode(node, false);
         } else {

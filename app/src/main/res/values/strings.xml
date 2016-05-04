@@ -37,5 +37,9 @@
     <string name="clicked_share">Clicked share</string>
     <string name="clicked_on_comment">Clicked on comment</string>
     <string name="clicked_sort">Clicked sort</string>
+    <string name="clicked_on_share">Clicked on share</string>
+    <string name="points_plural">%d Points</string>
+    <string name="points_singular">%d Point</string>
+    <string name="share">Share</string>
 
 </resources>

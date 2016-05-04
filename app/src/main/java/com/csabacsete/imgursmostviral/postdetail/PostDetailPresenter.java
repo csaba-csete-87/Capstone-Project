@@ -21,6 +21,7 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
     private final PostDetailContract.View view;
     private boolean postInfoReceived;
     private boolean commentsReceived;
+    private String shareLink;
 
     public PostDetailPresenter(
             @NonNull PostsRepository postsRepository,
@@ -57,11 +58,6 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
     }
 
     @Override
-    public void onShareButtonClicked() {
-        view.startShareActionProvider("https://imgur.com/");
-    }
-
-    @Override
     public void onGalleryItemClicked(Image image) {
         view.startZoomingImageViewer(image.getLink());
     }
@@ -72,11 +68,17 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
     }
 
     @Override
+    public void onShareButtonClicked() {
+        view.sharePost(shareLink);
+    }
+
+    @Override
     public void onPostLoaded(Post post) {
         if (post != null) {
+            this.shareLink = post.getLink();
             view.setTitle(post.getTitle());
             view.setPostedByUsername(post.getAccountUrl());
-            view.setPoints(String.valueOf(post.getPoints()) + " Points");
+            view.setPoints(post.getPoints());
             view.setPostedWhen(DateTimeUtils.getReadableTimeElapsed(post.getDatetime()));
 
             setPostImages(post);
