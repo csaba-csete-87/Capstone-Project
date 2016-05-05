@@ -53,7 +53,6 @@ public class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
 
     @Override
     public RemoteViews getViewAt(int position) {
-        Log.d("WidgetCreatingView", "WidgetCreatingView");
         RemoteViews remoteView = new RemoteViews(context.getPackageName(), R.layout.widget_list_item);
 
         Post p = posts.get(position);

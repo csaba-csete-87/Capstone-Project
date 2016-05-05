@@ -53,7 +53,9 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
         }
 
         commentsReceived = false;
+        view.clearCommentSection();
         view.setProgressIndicator(true);
+        view.setCommentProgress(true);
         postsRepository.getComments(postId, sort, this);
     }
 

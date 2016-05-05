@@ -137,9 +137,20 @@
                         </LinearLayout>
 
                         <FrameLayout
-                            android:id="@+id/comments_container"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content">
+
+                            <ProgressBar
+                                android:id="@+id/progress_comments"
+                                android:layout_width="?actionBarSize"
+                                android:layout_height="?actionBarSize"
+                                android:layout_gravity="center_horizontal" />
+
+                            <FrameLayout
+                                android:id="@+id/comments_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </FrameLayout>
                     </LinearLayout>
 
                 </android.support.v4.widget.NestedScrollView>

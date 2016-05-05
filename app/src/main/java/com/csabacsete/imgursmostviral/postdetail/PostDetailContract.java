@@ -14,6 +14,8 @@ public interface PostDetailContract {
 
         void setProgressIndicator(boolean active);
 
+        void setCommentProgress(boolean active);
+
         void setTitle(String title);
 
         void setPostedByUsername(String username);
@@ -31,6 +33,8 @@ public interface PostDetailContract {
         void startZoomingImageViewer(String path);
 
         void sharePost(String link);
+
+        void clearCommentSection();
     }
 
     interface Presenter {

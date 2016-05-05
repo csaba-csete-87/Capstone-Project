@@ -1,5 +1,6 @@
 package com.csabacsete.imgursmostviral.util;
 
+import android.text.TextUtils;
 import android.text.format.DateUtils;
 
 /**
@@ -23,7 +24,9 @@ public class DateTimeUtils {
         readableShort = readableShort.replace("hour ago", "h");
         readableShort = readableShort.replace("minutes ago", "m");
         readableShort = readableShort.replace("minute ago", "m");
-        readableShort = readableShort.replace("0 m", "just now");
+        if (TextUtils.equals(readableShort, "0 m")) {
+            readableShort = "Just now";
+        }
         return readableShort;
     }
 }

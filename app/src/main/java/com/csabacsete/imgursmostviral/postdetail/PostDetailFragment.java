@@ -97,6 +97,11 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     }
 
     @Override
+    public void setCommentProgress(boolean active) {
+        binding.progressComments.setVisibility(active ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
     public void setTitle(final String title) {
         binding.title.setText(title);
     }
@@ -169,6 +174,11 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
                 getString(R.string.clicked_share)
         ));
         startActivity(getShareIntent(link));
+    }
+
+    @Override
+    public void clearCommentSection() {
+        binding.commentsContainer.removeAllViews();
     }
 
     private void setupViews() {
@@ -272,11 +282,6 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
     private class AddCommentSectionViewToLayoutTask extends AsyncTask<List<Comment>, Void, View> {
 
-        @Override
-        protected void onPreExecute() {
-            setProgressIndicator(true);
-        }
-
         @SafeVarargs
         @Override
         protected final View doInBackground(List<Comment>... args) {
@@ -302,9 +307,8 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
         @Override
         protected void onPostExecute(View view) {
-            binding.commentsContainer.removeAllViews();
             binding.commentsContainer.addView(view);
-            setProgressIndicator(false);
+            setCommentProgress(false);
         }
     }
 }
