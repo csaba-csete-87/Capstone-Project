@@ -43,5 +43,7 @@
     <string name="share">Share</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="preference_key_top_post">preferenceKey_topPost</string>
+    <string name="preference_key_imgur">ImgurSharedPreferences</string>
 
 </resources>

@@ -2,15 +2,24 @@ package com.csabacsete.imgursmostviral.data.db.sync;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.AbstractThreadedSyncAdapter;
 import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.SyncRequest;
 import android.content.SyncResult;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.csabacsete.imgursmostviral.Injection;
@@ -18,6 +27,8 @@ import com.csabacsete.imgursmostviral.R;
 import com.csabacsete.imgursmostviral.data.db.ImgurContract;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.data.repositories.PostsRepository;
+import com.csabacsete.imgursmostviral.postdetail.PostDetailActivity;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 import java.util.Vector;
@@ -26,6 +37,7 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
 
     public static final int SYNC_INTERVAL = 30;
     public static final int SYNC_FLEXTIME = SYNC_INTERVAL / 10;
+    private static final int NOTIFICATION_ID = 100;
 
     public ImgurSyncAdapter(Context context, boolean autoInitialize) {
         super(context, autoInitialize);
@@ -176,6 +188,59 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
             );
         }
 
-        Log.d("Sync Complete. ", postsVector.size() + " Inserted");
+        Post newTopPost = posts.get(0);
+        String newTopPostId = newTopPost.getId();
+        String currentTopPostId = getCurrentTopPostIdFromSharedPreferences();
+        if (!TextUtils.isEmpty(currentTopPostId) && !TextUtils.equals(currentTopPostId, newTopPostId)) {
+            new IssueNotificationTask().execute(newTopPost);
+        } else {
+            setCurrentTopPostIdToSharedPreferences(newTopPostId);
+        }
+    }
+
+    private PendingIntent getPendingIntentForPost(Post post) {
+        Intent notificationIntent = new Intent(getContext(), PostDetailActivity.class);
+        notificationIntent.putExtra(PostDetailActivity.EXTRA_POST_ID, post.getId());
+        return PendingIntent.getActivity(getContext(), 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+    }
+
+    private String getCurrentTopPostIdFromSharedPreferences() {
+        SharedPreferences sharedPref = getSharedPreferences();
+        return sharedPref.getString(getContext().getString(R.string.preference_key_imgur), "");
+    }
+
+    private void setCurrentTopPostIdToSharedPreferences(final String id) {
+        SharedPreferences sharedPref = getSharedPreferences();
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(getContext().getString(R.string.preference_key_top_post), id);
+    }
+
+    private SharedPreferences getSharedPreferences() {
+        return getContext().getSharedPreferences(getContext().getString(R.string.preference_key_imgur), Context.MODE_PRIVATE);
+    }
+
+    class IssueNotificationTask extends AsyncTask<Post, Void, Notification> {
+
+        @Override
+        protected Notification doInBackground(Post... posts) {
+            Post post = posts[0];
+            PendingIntent pendingIntent = getPendingIntentForPost(post);
+            Bitmap b = ImageLoader.getInstance().loadImageSync(post.getThumbnail());
+
+            NotificationCompat.Builder builder =
+                    new NotificationCompat.Builder(getContext())
+                            .setSmallIcon(R.drawable.ic_notification)
+                            .setLargeIcon(b)
+                            .setContentTitle("A new post is trending!")
+                            .setContentText(post.getTitle())
+                            .setContentIntent(pendingIntent);
+            return builder.build();
+        }
+
+        @Override
+        protected void onPostExecute(Notification notification) {
+            NotificationManager mNotifyMgr = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+            mNotifyMgr.notify(NOTIFICATION_ID, notification);
+        }
     }
 }

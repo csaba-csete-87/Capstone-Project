@@ -1,11 +1,9 @@
 package com.csabacsete.imgursmostviral.widget;
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -62,16 +60,19 @@ public class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
         Bitmap b = ImageLoader.getInstance().loadImageSync(p.getThumbnail());
         remoteView.setImageViewBitmap(R.id.icon, b);
 
-        remoteView.setOnClickPendingIntent(remoteView.getLayoutId(), getPendingSelfIntent(context, p.getId()));
+//        Intent notificationIntent = new Intent(context, PostDetailActivity.class);
+//        notificationIntent.putExtra(PostDetailActivity.EXTRA_POST_ID, p.getId());
+//        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+//        remoteView.setOnClickPendingIntent(remoteView.getLayoutId(), pendingIntent);
 
         return remoteView;
     }
 
-    protected PendingIntent getPendingSelfIntent(Context context, String postId) {
-        Intent intent = new Intent(context, getClass());
-        intent.putExtra("postId", postId);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
-    }
+//    protected PendingIntent getPendingSelfIntent(Context context, String postId) {
+//        Intent intent = new Intent(context, getClass());
+//        intent.putExtra("postId", postId);
+//        return PendingIntent.getBroadcast(context, 0, intent, 0);
+//    }
 
     @Override
     public int getViewTypeCount() {
