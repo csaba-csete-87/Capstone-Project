@@ -3,7 +3,6 @@ package com.csabacsete.imgursmostviral;
 import android.app.Application;
 import android.content.Context;
 
-import com.facebook.stetho.Stetho;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -40,10 +39,8 @@ public class ImgurApplication extends Application {
         super.onCreate();
 
         context = getApplicationContext();
-        Stetho.initializeWithDefaults(this);
 
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(config);
     }
 }

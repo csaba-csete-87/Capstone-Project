@@ -23,7 +23,6 @@ import com.csabacsete.imgursmostviral.Injection;
 import com.csabacsete.imgursmostviral.R;
 import com.csabacsete.imgursmostviral.data.models.Comment;
 import com.csabacsete.imgursmostviral.data.models.Image;
-import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.databinding.FragmentPostDetailBinding;
 import com.csabacsete.imgursmostviral.util.AnalyticsUtils;
 import com.google.android.gms.analytics.HitBuilders;
@@ -145,7 +144,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     @Override
     public void showSelectSortTypeDialog() {
         new AlertDialog.Builder(getActivity())
-                .setSingleChoiceItems(Post.SORT_TYPES, 0, new DialogInterface.OnClickListener() {
+                .setSingleChoiceItems(getResources().getStringArray(R.array.sort_types), 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String bindingText = getString(R.string.best);
@@ -200,6 +199,11 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     @Override
     public void showNoNetworkAvailable() {
         binding.containerNoInternet.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideNoNetworkAvailable() {
+        binding.containerNoInternet.setVisibility(View.GONE);
     }
 
     private void setupViews() {

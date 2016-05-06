@@ -12,7 +12,7 @@ import com.csabacsete.imgursmostviral.R;
 /**
  * Implementation of App Widget functionality.
  */
-public class TopPosts extends AppWidgetProvider {
+public class TopPostsWidget extends AppWidgetProvider {
 
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {

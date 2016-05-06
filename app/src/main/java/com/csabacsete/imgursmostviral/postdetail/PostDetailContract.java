@@ -43,6 +43,8 @@ public interface PostDetailContract {
         void showErrorLoadingComments();
 
         void showNoNetworkAvailable();
+
+        void hideNoNetworkAvailable();
     }
 
     interface Presenter {

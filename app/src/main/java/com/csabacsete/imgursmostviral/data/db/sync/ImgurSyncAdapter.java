@@ -20,7 +20,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.csabacsete.imgursmostviral.Injection;
 import com.csabacsete.imgursmostviral.R;
@@ -137,8 +136,6 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
 
     @Override
     public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
-        Log.d("Starting sync", "onPerformSync");
-
         PostsRepository repository = Injection.provideServerRepository();
 
         repository.getPosts(new PostsRepository.GetPostsCallback() {
@@ -191,8 +188,10 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
         Post newTopPost = posts.get(0);
         String newTopPostId = newTopPost.getId();
         String currentTopPostId = getCurrentTopPostIdFromSharedPreferences();
-        if (!TextUtils.isEmpty(currentTopPostId) && !TextUtils.equals(currentTopPostId, newTopPostId)) {
-            new IssueNotificationTask().execute(newTopPost);
+        if (!TextUtils.isEmpty(currentTopPostId)) {
+            if (!TextUtils.equals(currentTopPostId, newTopPostId)) {
+                new IssueNotificationTask().execute(newTopPost);
+            }
         } else {
             setCurrentTopPostIdToSharedPreferences(newTopPostId);
         }

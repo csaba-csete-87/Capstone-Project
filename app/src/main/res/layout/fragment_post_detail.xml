@@ -193,7 +193,7 @@
                 app:borderWidth="0dp"
                 app:elevation="@dimen/fab_elevation"
                 app:layout_anchor="@id/top_info_container"
-                app:layout_anchorGravity="bottom|right|end"
+                app:layout_anchorGravity="bottom|end"
                 app:pressedTranslationZ="@dimen/fab_press_translation_z" />
         </android.support.design.widget.CoordinatorLayout>
     </android.support.v4.widget.SwipeRefreshLayout>

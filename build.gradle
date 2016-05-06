@@ -25,13 +25,14 @@ task clean(type: Delete) {
 // Define versions in a single place
 ext {
     // Sdk and tools
-    minSdkVersion = 16
+    minSdkVersion = 17
     targetSdkVersion = 23
     compileSdkVersion = 23
     buildToolsVersion = '23.0.2'
 
     // App dependencies
     supportLibraryVersion = '23.3.0'
+    googlePlayServicesVersion = '8.4.0'
     guavaVersion = '18.0'
     glideVersion = '3.6.1'
     junitVersion = '4.12'
@@ -43,4 +44,7 @@ ext {
     espressoVersion = '2.2.1'
     retrofit = '2.0.0-beta4'
     gsonConverter = '2.0.0-beta3'
+    universalImageLoaderVersion = '1.9.5'
+    androidTreeViewVersion = '1.2.9'
+    stethoVersion = '1.3.1'
 }

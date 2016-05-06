@@ -39,6 +39,8 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
         if (!NetworkUtils.isNetworkAvailable()) {
             view.showNoNetworkAvailable();
             return;
+        } else {
+            view.hideNoNetworkAvailable();
         }
         if (null == postId || postId.isEmpty()) {
             view.showPostNotFound();

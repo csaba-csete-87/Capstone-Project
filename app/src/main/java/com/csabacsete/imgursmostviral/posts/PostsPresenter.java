@@ -20,8 +20,8 @@ public class PostsPresenter implements PostsContract.UserActionsListener, PostsR
     public PostsPresenter(
             @NonNull PostsRepository postsRepository,
             @NonNull PostsContract.View postsView) {
-        mPostsRepository = checkNotNull(postsRepository, "postsRepository cannot be null");
-        mPostsView = checkNotNull(postsView, "postsView cannot be null");
+        mPostsRepository = checkNotNull(postsRepository);
+        mPostsView = checkNotNull(postsView);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class PostsPresenter implements PostsContract.UserActionsListener, PostsR
 
     @Override
     public void openPostDetails(@NonNull Post requestedPost) {
-        checkNotNull(requestedPost, "requestedPost cannot be null!");
+        checkNotNull(requestedPost);
         mPostsView.showPostDetailUi(requestedPost.getId());
     }
 

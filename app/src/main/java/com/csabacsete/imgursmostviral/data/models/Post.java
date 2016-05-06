@@ -11,10 +11,6 @@ import java.util.List;
 public class Post extends Image {
 
     public static final String TYPE_GIF = "image/gif";
-    public static final String SORT_TYPE_BEST = "Best";
-    public static final String SORT_TYPE_TOP = "Top";
-    public static final String SORT_TYPE_NEWEST = "Newest";
-    public static final String[] SORT_TYPES = {SORT_TYPE_BEST, SORT_TYPE_TOP, SORT_TYPE_NEWEST};
     private static final String COVER_TEMPLATE = "http://i.imgur.com/%sm.jpg";
     private String cover;
     private int points;
@@ -52,10 +48,6 @@ public class Post extends Image {
         return cover;
     }
 
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
-
     public int getPoints() {
         return points;
     }
@@ -72,20 +64,8 @@ public class Post extends Image {
         return isAlbum;
     }
 
-    public void setAlbum(boolean album) {
-        isAlbum = album;
-    }
-
     public String getAccountUrl() {
         return accountUrl;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
     }
 
     public List<Image> getImages() {

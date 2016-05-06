@@ -49,7 +49,6 @@ public class PostsRepositoryApiImpl implements PostsRepository {
                     if (response.isSuccess()) {
                         callback.onPostsLoaded(response.body().getPosts());
                     } else {
-                        Log.e("getPosts", response.raw().message());
                         callback.onPostsLoaded(new ArrayList<Post>());
                     }
                 }
@@ -81,7 +80,6 @@ public class PostsRepositoryApiImpl implements PostsRepository {
                 if (response.isSuccess()) {
                     callback.onPostLoaded(response.body().getPost());
                 } else {
-                    Log.e("getPosts", response.raw().message());
                     callback.onPostLoaded(null);
                 }
             }
@@ -105,7 +103,6 @@ public class PostsRepositoryApiImpl implements PostsRepository {
                 if (response.isSuccess()) {
                     callback.onCommentsLoaded(response.body().getComments());
                 } else {
-                    Log.e("getComments", response.raw().message());
                     callback.onCommentsLoaded(null);
                 }
             }
