@@ -17,9 +17,11 @@ android {
     buildTypes {
         debug {
             it.buildConfigField 'String', 'IMGUR_CLIENT_ID', ImgurCliendId
+            it.buildConfigField 'String', 'IMGUR_API_BASE_URL', ImgurApiBaseUrl
         }
         release {
             it.buildConfigField 'String', 'IMGUR_CLIENT_ID', ImgurCliendId
+            it.buildConfigField 'String', 'IMGUR_API_BASE_URL', ImgurApiBaseUrl
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

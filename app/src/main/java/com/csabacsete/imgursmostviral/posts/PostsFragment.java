@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,7 @@ import com.csabacsete.imgursmostviral.R;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.databinding.FragmentPostsBinding;
 import com.csabacsete.imgursmostviral.postdetail.PostDetailActivity;
-import com.csabacsete.imgursmostviral.util.AnalyticsUtil;
+import com.csabacsete.imgursmostviral.util.AnalyticsUtils;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -41,7 +40,7 @@ public class PostsFragment extends Fragment implements PostsContract.View {
     PostsAdapter.PostItemListener postItemClickedListener = new PostsAdapter.PostItemListener() {
         @Override
         public void onPostClick(Post clickedPost) {
-            tracker.send(AnalyticsUtil.getEvent(
+            tracker.send(AnalyticsUtils.getEvent(
                     getString(R.string.action),
                     getString(R.string.selected_post)
             ));
@@ -122,7 +121,7 @@ public class PostsFragment extends Fragment implements PostsContract.View {
         binding.ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tracker.send(AnalyticsUtil.getEvent(
+                tracker.send(AnalyticsUtils.getEvent(
                         getString(R.string.action),
                         getString(R.string.clicked_on_ad)
                 ));

@@ -7,6 +7,7 @@ import com.csabacsete.imgursmostviral.data.models.Image;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.data.repositories.PostsRepository;
 import com.csabacsete.imgursmostviral.util.DateTimeUtils;
+import com.csabacsete.imgursmostviral.util.NetworkUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class PostDetailPresenter implements PostDetailContract.Presenter, PostsRepository.GetPostCallback, PostsRepository.GetCommentsCallback {
     private final PostsRepository postsRepository;
     private final PostDetailContract.View view;
-    private boolean postInfoReceived;
-    private boolean commentsReceived;
+    private boolean getPostInfoRequestReceived;
+    private boolean getCommentsRequestReceived;
     private String shareLink;
 
     public PostDetailPresenter(
@@ -34,25 +35,30 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
     }
 
     @Override
-    public void getPost(String postId) {
+    public void getData(String postId, String sort) {
+        if (!NetworkUtils.isNetworkAvailable()) {
+            view.showNoNetworkAvailable();
+            return;
+        }
         if (null == postId || postId.isEmpty()) {
-            // TODO: 5/2/16 notify view
+            view.showPostNotFound();
             return;
         }
 
-        postInfoReceived = false;
+        getPost(postId);
+        getComments(postId, sort);
+    }
+
+    @Override
+    public void getPost(String postId) {
+        getPostInfoRequestReceived = false;
         view.setProgressIndicator(true);
         postsRepository.getPost(postId, this);
     }
 
     @Override
     public void getComments(String postId, String sort) {
-        if (null == postId || postId.isEmpty()) {
-            // TODO: 5/2/16 notify view
-            return;
-        }
-
-        commentsReceived = false;
+        getCommentsRequestReceived = false;
         view.clearCommentSection();
         view.setProgressIndicator(true);
         view.setCommentProgress(true);
@@ -85,10 +91,10 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
 
             setPostImages(post);
         } else {
-            // TODO: 5/2/16 notify view of error
+            view.showErrorLoadingPost();
         }
-        postInfoReceived = true;
-        view.setProgressIndicator(!commentsReceived);
+        getPostInfoRequestReceived = true;
+        view.setProgressIndicator(!getCommentsRequestReceived);
     }
 
     private void setPostImages(Post post) {
@@ -120,11 +126,11 @@ public class PostDetailPresenter implements PostDetailContract.Presenter, PostsR
         if (comments != null) {
             view.setComments(comments);
         } else {
-            // TODO: 5/3/16 notify view
+            view.showErrorLoadingComments();
         }
 
-        commentsReceived = true;
-        view.setProgressIndicator(!postInfoReceived);
+        getCommentsRequestReceived = true;
+        view.setProgressIndicator(!getPostInfoRequestReceived);
     }
 
 }

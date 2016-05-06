@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -24,7 +25,7 @@ import com.csabacsete.imgursmostviral.data.models.Comment;
 import com.csabacsete.imgursmostviral.data.models.Image;
 import com.csabacsete.imgursmostviral.data.models.Post;
 import com.csabacsete.imgursmostviral.databinding.FragmentPostDetailBinding;
-import com.csabacsete.imgursmostviral.util.AnalyticsUtil;
+import com.csabacsete.imgursmostviral.util.AnalyticsUtils;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.unnamed.b.atv.model.TreeNode;
@@ -58,8 +59,8 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         presenter = new PostDetailPresenter(Injection.provideServerRepository(), this);
-        presenter.getPost(postId);
-        presenter.getComments(postId, getString(R.string.best).toLowerCase());
+
+        presenter.getData(postId, getString(R.string.best).toLowerCase());
     }
 
     @Override
@@ -164,12 +165,12 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
 
     @Override
     public void startZoomingImageViewer(String path) {
-        // TODO: 5/2/16 maybe in a future this will be implemented
+        // TODO: 5/2/16 maybe in a future release this will be implemented
     }
 
     @Override
     public void sharePost(String link) {
-        tracker.send(AnalyticsUtil.getEvent(
+        tracker.send(AnalyticsUtils.getEvent(
                 getString(R.string.action),
                 getString(R.string.clicked_share)
         ));
@@ -179,6 +180,26 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
     @Override
     public void clearCommentSection() {
         binding.commentsContainer.removeAllViews();
+    }
+
+    @Override
+    public void showPostNotFound() {
+        Snackbar.make(binding.getRoot(), R.string.post_not_found, Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showErrorLoadingPost() {
+        Snackbar.make(binding.getRoot(), R.string.error_load_post, Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showErrorLoadingComments() {
+        Snackbar.make(binding.getRoot(), R.string.error_load_comments, Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showNoNetworkAvailable() {
+        binding.containerNoInternet.setVisibility(View.VISIBLE);
     }
 
     private void setupViews() {
@@ -209,9 +230,11 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         PostDetailActivity activity = ((PostDetailActivity) getActivity());
         activity.setSupportActionBar(binding.toolbar);
         ActionBar actionBar = activity.getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(true);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
     }
 
     private void setupGallery() {
@@ -229,7 +252,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         binding.sortContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tracker.send(AnalyticsUtil.getEvent(
+                tracker.send(AnalyticsUtils.getEvent(
                         getString(R.string.action),
                         getString(R.string.clicked_sort)
                 ));
@@ -276,7 +299,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
         shareIntent.putExtra(Intent.EXTRA_TEXT, link);
-        shareIntent.setType("text/plain");
+        shareIntent.setType(getString(R.string.type_text_plain));
         return shareIntent;
     }
 
@@ -296,7 +319,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
             tView.setDefaultNodeClickListener(new TreeNode.TreeNodeClickListener() {
                 @Override
                 public void onClick(TreeNode node, Object value) {
-                    tracker.send(AnalyticsUtil.getEvent(
+                    tracker.send(AnalyticsUtils.getEvent(
                             getString(R.string.action),
                             getString(R.string.clicked_on_comment)
                     ));
@@ -308,6 +331,7 @@ public class PostDetailFragment extends Fragment implements PostDetailContract.V
         @Override
         protected void onPostExecute(View view) {
             binding.commentsContainer.addView(view);
+            binding.sortContainer.setVisibility(View.VISIBLE);
             setCommentProgress(false);
         }
     }

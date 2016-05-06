@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by ccsete on 5/3/16.
  */
-public class AnalyticsUtil {
+public class AnalyticsUtils {
 
     public static Map<String, String> getEvent(String category, String action) {
         return new HitBuilders.EventBuilder()

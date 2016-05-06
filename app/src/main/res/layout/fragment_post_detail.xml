@@ -102,6 +102,32 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <LinearLayout
+                            android:id="@+id/container_no_internet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/grid_2"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:layout_width="@dimen/no_internet_image_size"
+                                android:layout_height="@dimen/no_internet_image_size"
+                                android:layout_gravity="center_horizontal"
+                                android:contentDescription="@string/icon_no_network_connection"
+                                android:src="@drawable/ic_antenna"
+                                android:tint="@android:color/darker_gray" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="@string/no_network_connection"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@android:color/darker_gray" />
+
+                        </LinearLayout>
+
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/post_images"
                             android:layout_width="match_parent"
@@ -113,7 +139,8 @@
                             android:layout_height="wrap_content"
                             android:background="?selectableItemBackground"
                             android:clickable="true"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:visibility="gone">
 
                             <TextView
                                 android:id="@+id/sort_comments_by"

@@ -45,5 +45,24 @@
     <string name="add_widget">Add widget</string>
     <string name="preference_key_top_post">preferenceKey_topPost</string>
     <string name="preference_key_imgur">ImgurSharedPreferences</string>
+    <string name="days_ago">days ago</string>
+    <string name="day_ago">day ago</string>
+    <string name="days_ago_short">d</string>
+    <string name="hours_ago">hours ago</string>
+    <string name="hour_ago">hour ago</string>
+    <string name="minutes_ago">minutes ago</string>
+    <string name="minute_ago">minute ago</string>
+    <string name="hours_ago_short">h</string>
+    <string name="minutes_ago_short">m</string>
+    <string name="zero_minutes_ago_short">0 m</string>
+    <string name="just_now">Just now</string>
+    <string name="post_not_found">The post you are looking for is in another castle.</string>
+    <string name="error_load_post">An error occurred while trying to load the post.</string>
+    <string name="error_load_comments">An error occurred while trying to load the comments.</string>
+    <string name="no_network_connection">No network connection</string>
+    <string name="type_text_plain">text/plain</string>
+    <string name="post_thumbnail">Post thumbnail</string>
+    <string name="icon_no_network_connection">No network connection icon</string>
+    <string name="post_image">Post image</string>
 
 </resources>

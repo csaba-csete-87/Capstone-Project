@@ -1,5 +1,6 @@
 package com.csabacsete.imgursmostviral.data.api;
 
+import com.csabacsete.imgursmostviral.BuildConfig;
 import com.csabacsete.imgursmostviral.data.responses.CommentsResponse;
 import com.csabacsete.imgursmostviral.data.responses.PostResponse;
 import com.csabacsete.imgursmostviral.data.responses.PostsResponse;
@@ -16,11 +17,9 @@ public class PostsServiceApiImpl implements PostsServiceApi {
 
     private static PostsServiceApi postsServiceApi = null;
 
-    // TODO: 2016-02-24 add string to gradle
-
     public PostsServiceApiImpl() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.imgur.com")
+                .baseUrl(BuildConfig.IMGUR_API_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

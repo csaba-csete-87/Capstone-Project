@@ -35,9 +35,19 @@ public interface PostDetailContract {
         void sharePost(String link);
 
         void clearCommentSection();
+
+        void showPostNotFound();
+
+        void showErrorLoadingPost();
+
+        void showErrorLoadingComments();
+
+        void showNoNetworkAvailable();
     }
 
     interface Presenter {
+
+        void getData(String postId, String sort);
 
         void getPost(String postId);
 

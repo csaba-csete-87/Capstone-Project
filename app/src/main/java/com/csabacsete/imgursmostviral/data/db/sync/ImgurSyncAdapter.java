@@ -206,13 +206,14 @@ public class ImgurSyncAdapter extends AbstractThreadedSyncAdapter {
 
     private String getCurrentTopPostIdFromSharedPreferences() {
         SharedPreferences sharedPref = getSharedPreferences();
-        return sharedPref.getString(getContext().getString(R.string.preference_key_imgur), "");
+        return sharedPref.getString(getContext().getString(R.string.preference_key_top_post), "");
     }
 
     private void setCurrentTopPostIdToSharedPreferences(final String id) {
         SharedPreferences sharedPref = getSharedPreferences();
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getContext().getString(R.string.preference_key_top_post), id);
+        editor.apply();
     }
 
     private SharedPreferences getSharedPreferences() {

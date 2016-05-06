@@ -20,6 +20,7 @@
             android:id="@+id/post_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_height"
+            android:contentDescription="@string/post_thumbnail"
             android:scaleType="centerCrop" />
 
         <TextView

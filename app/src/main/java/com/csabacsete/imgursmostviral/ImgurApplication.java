@@ -1,6 +1,7 @@
 package com.csabacsete.imgursmostviral;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -14,6 +15,12 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 public class ImgurApplication extends Application {
 
     private Tracker tracker;
+
+    private static Context context;
+
+    public static Context getImgurAppContext() {
+        return context;
+    }
 
     /**
      * Gets the default {@link Tracker} for this {@link Application}.
@@ -32,6 +39,7 @@ public class ImgurApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        context = getApplicationContext();
         Stetho.initializeWithDefaults(this);
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
